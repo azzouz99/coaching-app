@@ -13,11 +13,24 @@ class CoachSeeder extends Seeder
      */
     public function run(): void
     {
-               for ($i = 1; $i <= 9; $i++) {
+        $specialtiesPool = [
+            ['Coaching Personnel', 'Développement Personnel'],
+            ['Leadership', 'Management', 'Communication'],
+            ['Formation', 'Pédagogie', 'Enseignement'],
+            ['Fitness', 'Nutrition', 'Bien-être'],
+            ['Business', 'Entrepreneuriat', 'Stratégie'],
+            ['Mindfulness', 'Méditation', 'Relaxation'],
+            ['Créativité', 'Innovation', 'Design Thinking'],
+            ['Productivité', 'Organisation', 'Gestion du temps'],
+            ['Relations', 'Communication', 'Intelligence émotionnelle']
+        ];
+
+        for ($i = 1; $i <= 9; $i++) {
             $coach = Coach::create([
                 'name' => "Coach $i",
                 'description' => "This is the description for Coach $i.",
                 'photo' => "coaches/coach$i.jpg", // assuming you store images in storage/app/public/coaches/
+                'specialties' => $specialtiesPool[($i - 1) % count($specialtiesPool)],
             ]);
 
             Video::create([

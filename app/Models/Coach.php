@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Coach extends Model
 {
-    protected $fillable = ['name', 'description', 'photo'];
+    protected $fillable = ['name', 'description', 'photo', 'specialties'];
+    
+    protected $casts = [
+        'specialties' => 'array',
+    ];
     
     public function video()
     {

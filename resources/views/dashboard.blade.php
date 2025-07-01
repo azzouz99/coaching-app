@@ -109,15 +109,11 @@
                                     @endif
 
                                     <!-- Action Buttons -->
-                                    <div class="flex space-x-2">
-                                        <button class="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 text-sm">
-                                            {{ __('Voir le Profil') }}
-                                        </button>
-                                        
+                                    <div class="flex space-x-2">                                        
                                         @if($coach->video)
-                                            <button class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 text-sm">
+                                            <a href="{{ route('coach.show', $coach) }}" class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 text-sm text-center">
                                                 {{ __('Voir les Vidéos') }}
-                                            </button>
+                                            </a>
                                         @else
                                             <button class="flex-1 bg-gray-100 text-gray-400 font-medium py-2.5 px-4 rounded-lg text-sm cursor-not-allowed">
                                                 {{ __('Pas de vidéo') }}
