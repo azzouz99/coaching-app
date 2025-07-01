@@ -9,18 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+   public function up()
     {
-        Schema::create('coaches', function (Blueprint $table) {
+        Schema::create('video_views', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('video_id')->constrained()->onDelete('cascade');
+            $table->timestamp('viewed_at');
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('coaches');
+        Schema::dropIfExists('video_views');
     }
 };
