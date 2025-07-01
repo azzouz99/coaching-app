@@ -13,11 +13,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     $coaches = Coach::all();
     return view('dashboard', compact('coaches'));
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'subscribed'])->name('dashboard');
 
 Route::get('/coach/{coach}', function (Coach $coach) {
     return view('coach.show', compact('coach'));
-})->middleware(['auth', 'verified'])->name('coach.show');
+})->middleware(['auth', 'verified', 'subscribed'])->name('coach.show');
 
 // Routes pour l'abonnement
 Route::middleware('auth')->group(function () {

@@ -21,11 +21,13 @@ class SubscriptionController extends Controller
         // Après le paiement réussi, créez l'abonnement
         $subscription = new Subscription();
         $subscription->user_id = Auth::id();
-        $subscription->status = 'active';
+        $subscription->paid = true;
+        $subscription->payment_date = now();
+        $subscription->payment_method = $request->input('payment_method', 'card');
         $subscription->ends_at = null; // Abonnement à vie
         $subscription->save();
 
-        return redirect()->route('dashboard')->with('success', 'Merci pour votre abonnement! Vous avez maintenant accès à toutes nos vidéos.');
+        return redirect()->route('subscription.success')->with('success', 'Merci pour votre abonnement! Vous avez maintenant accès à toutes nos vidéos.');
     }
 
     public function success()

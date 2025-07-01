@@ -8,6 +8,10 @@ class Subscription extends Model
 {
     protected $fillable = ['user_id', 'paid', 'payment_date', 'payment_method'];
 
+    protected $casts = [
+        'paid' => 'boolean'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
