@@ -45,4 +45,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    
+        public function subscription()
+    {
+        return $this->hasOne(Subscription::class);
+    }
+
+    // If you track views
+    public function videoViews()
+    {
+        return $this->hasMany(VideoView::class);
+    }
 }
