@@ -9,7 +9,21 @@ Route::get('/', function () {
     $coaches = Coach::all();
     return view('welcome', compact('coaches'));
 });
+Route::get('/inscription', function () {
+    return view('Inscription.index');
+})->name('inscription');
 
+Route::get('/inscription/coach', function () {
+    return view('Inscription.components.coach-inscription');
+})->name('inscription.coach');
+
+Route::get('/inscription/etudiant', function () {
+    return view('Inscription.components.student-inscription');
+})->name('inscription.etudiant');
+
+Route::get('/inscription/about', function () {
+    return view('Inscription.components.about-us');
+})->name('inscription.about');
 Route::get('/dashboard', function () {
     $coaches = Coach::all();
     return view('dashboard', compact('coaches'));
