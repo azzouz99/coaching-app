@@ -39,8 +39,8 @@
             <div>
                 <h3 class="text-sm font-semibold text-gray-800 mb-4">Inscriptions</h3>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="{{ url('/inscription/coach') }}" class="text-gray-600 hover:text-green-600">Inscription Coach</a></li>
-                    <li><a href="{{ url('/inscription/etudiant') }}" class="text-gray-600 hover:text-green-600">Inscription Étudiant</a></li>
+                    <li><a href="{{ url('/inscription/coach') }}" class="text-gray-600 hover:text-green-600">Soumission des travaux scientifiques</a></li>
+                    <li><a href="{{ url('/inscription/etudiant') }}" class="text-gray-600 hover:text-green-600">Inscription</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-green-600">FAQ</a></li>
                     <li><a href="#" class="text-gray-600 hover:text-green-600">Contactez-nous</a></li>
                 </ul>
@@ -60,13 +60,23 @@
                         <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>contact@congres-coaching.tn</span>
+                        <span>lotfi.guenaien@gmail.com</span>
                     </li>
                     <li class="flex items-start">
                         <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
-                        <span>+216 71 123 456</span>
+                        <span>Lotfi Guenaien : +216 98 939 834</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="h-5 w-5 text-green-600 mr-2 mt-0.5">
+                        </div>
+                        <span>Rafika el Kateb : +216 98 105 139</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="h-5 w-5 text-green-600 mr-2 mt-0.5">
+                        </div>
+                        <span>Yassine Malek : +216 98 906 514</span>
                     </li>
                 </ul>
             </div>

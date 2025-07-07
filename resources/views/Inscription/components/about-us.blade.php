@@ -1,3 +1,4 @@
+<x-inscription-layout>
 <div class="max-w-4xl mx-auto py-12 px-4">
     <h1 class="text-3xl font-bold text-green-600 mb-6 text-center">À propos du Congrès International de Coaching</h1>
     
@@ -41,3 +42,4 @@
         <a href="{{ url('/inscription') }}" class="inline-block bg-green-600 text-white px-6 py-3 rounded-md font-medium hover:bg-green-700 transition-colors">Retour à la page d'accueil</a>
     </div>
 </div>
+</x-inscription-layout>

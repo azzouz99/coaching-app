@@ -4,12 +4,12 @@
         <div class="container mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Congrès International de Coaching 2025</h1>
-                    <p class="text-xl text-gray-600 mb-6">25-27 Juillet 2025 • Tunis, Tunisie</p>
-                    <p class="text-gray-600 mb-8">Rejoignez les meilleurs experts en coaching pour trois jours de conférences, ateliers et réseautage. Une opportunité unique de perfectionner vos compétences et d'élargir votre réseau professionnel.</p>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="text-gray-800">2ème congrès de CETMI</span> <span class="text-green-600">AMYGDALITE ET ASTHME</span></h1>
+                    <p class="text-xl text-gray-600 mb-6">10-11 Octobre 2025 • Kairouan, Tunisie</p>
+                    <p class="text-gray-600 mb-8">Profitez de moments privilégiés pour échanger avec des experts nationaux et internationaux .ne manquer pas cette opportunité unique de formation, d’échange et de mise à jour de vos connaissances en pathologie Orl et Pneumologie dans un contexte islamique.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="{{ url('/inscription/coach') }}" class="inline-block bg-green-600 text-white px-6 py-3 rounded-md font-medium hover:bg-green-700 transition-colors text-center">Inscription Coach</a>
-                        <a href="{{ url('/inscription/etudiant') }}" class="inline-block bg-white text-green-600 border border-green-600 px-6 py-3 rounded-md font-medium hover:bg-green-50 transition-colors text-center">Inscription Étudiant</a>
+                        <a href="{{ url('/inscription/coach') }}" class="inline-block bg-green-600 text-white px-6 py-3 rounded-md font-medium hover:bg-green-700 transition-colors text-center">Soumission des travaux scientifiques</a>
+                        <a href="{{ url('/inscription/etudiant') }}" class="inline-block bg-white text-green-600 border border-green-600 px-6 py-3 rounded-md font-medium hover:bg-green-50 transition-colors text-center">Inscription</a>
                     </div>
                 </div>
                 <div class="md:w-1/2">
@@ -30,7 +30,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Date & Lieu</h3>
-                    <p class="text-gray-600">25-27 Juillet 2025<br>Centre de Conférences<br>Tunis, Tunisie</p>
+                    <p class="text-gray-600">10-11 Octobre 2025<br>hôtel le Continental<br>Kairouan, Tunisie</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 text-center">
@@ -70,9 +70,9 @@
                 </div>
                 <div class="md:w-1/2">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Le plus grand événement de coaching en Tunisie</h3>
-                    <p class="text-gray-600 mb-4">Le Congrès International de Coaching est l'événement de référence pour tous les professionnels et étudiants dans le domaine du coaching et du développement personnel.</p>
-                    <p class="text-gray-600 mb-4">Pour sa 5ème édition, nous vous proposons un programme riche et varié avec des intervenants de renommée internationale qui partageront leurs connaissances, expériences et les dernières tendances du secteur.</p>
-                    <p class="text-gray-600 mb-6">Que vous soyez coach professionnel, en formation ou simplement intéressé par le développement personnel, ce congrès vous offrira des opportunités uniques d'apprentissage et de réseautage.</p>
+                    <p class="text-gray-600 mb-4">Nous avons l'immense honneur de vous convier à la 2ème édition du Congrès du centre d’études Tunisien de Médecine Islamique l'événement phare de notre discipline au carrefour des spécialités médicales.</p>
+                    <p class="text-gray-600 mb-4">Cette année, notre rendez-vous annuel se tiendra dans le cadre enchanteur de Kairouan, au prestigieux hôtel le Continental les , 10 et 11 octobre 2025.en partenariat avec hôpital IBN EL JAZAR.</p>
+                    <p class="text-gray-600 mb-6">Ensemble, faisons progresser la médecine Islamique Pour le bien-être de nos patients !</p>
                     
                     <div class="grid grid-cols-2 gap-4">
                         <div class="flex items-center">
@@ -111,14 +111,14 @@
             <div class="max-w-3xl mx-auto text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Programme du Congrès</h2>
                 <div class="w-16 h-1 bg-green-600 mx-auto mb-6"></div>
-                <p class="text-gray-600">Trois jours intenses d'apprentissage, de partage et de réseautage.</p>
+                <p class="text-gray-600">Deux jours intenses d'apprentissage, de partage et de réseautage autour des thématiques de l'amygdalite et de l'asthme.</p>
             </div>
             
             <div class="max-w-4xl mx-auto">
                 <!-- Day 1 -->
                 <div class="mb-10">
                     <div class="flex items-center mb-6">
-                        <div class="bg-green-600 text-white text-lg font-semibold py-2 px-4 rounded">Jour 1 • 25 Juillet</div>
+                        <div class="bg-green-600 text-white text-lg font-semibold py-2 px-4 rounded">Jour 1 • 10 Octobre</div>
                         <div class="h-px flex-grow bg-gray-200 ml-4"></div>
                     </div>
                     
@@ -130,11 +130,11 @@
                                 </div>
                                 <div class="px-3 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">Séance Plénière</div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2">Cérémonie d'Ouverture et Conférence Inaugurale</h3>
-                            <p class="text-gray-600 mb-4">Discours de bienvenue et présentation des enjeux actuels du coaching par des experts internationaux.</p>
+                            <h3 class="text-xl font-semibold mb-2">1. Stratégie de prévention islamique</h3>
+                            <p class="text-gray-600 mb-4">Présentation des approches préventives inspirées de la médecine islamique et leur intégration dans la pratique médicale contemporaine. Découvrez comment les enseignements traditionnels peuvent enrichir les protocoles modernes.</p>
                             <div class="flex items-center">
                                 <img src="https://placehold.co/100/eef7ee/14532d?text=A" alt="Intervenant" class="w-10 h-10 rounded-full mr-2">
-                                <span class="text-gray-700 font-medium">Dr. Ahmed Benali, Président de l'Association Internationale de Coaching</span>
+                                <span class="text-gray-700 font-medium">Dr. Mohamed El Farsi, Spécialiste en médecine islamique</span>
                             </div>
                         </div>
                         
@@ -143,51 +143,132 @@
                                 <div class="mb-2 md:mb-0">
                                     <span class="text-green-600 font-semibold">11:00 - 12:30</span>
                                 </div>
-                                <div class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Ateliers Parallèles</div>
+                                <div class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Conférence Spécialisée</div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2">Les Fondamentaux du Coaching Professionnel</h3>
-                            <p class="text-gray-600 mb-4">Exploration des principes essentiels qui font un coaching efficace et éthique.</p>
+                            <h3 class="text-xl font-semibold mb-2">2. ORL : physiopathologie Oto Rhino Laryngologie » Amygdalite</h3>
+                            <p class="text-gray-600 mb-4">Exploration approfondie des mécanismes physiopathologiques de l'amygdalite et des dernières avancées en matière de diagnostic et de traitement. Session animée par des spécialistes de renommée internationale.</p>
                             <div class="flex items-center">
                                 <img src="https://placehold.co/100/eef7ee/14532d?text=S" alt="Intervenant" class="w-10 h-10 rounded-full mr-2">
-                                <span class="text-gray-700 font-medium">Sophia Haddad, Master Coach et Formatrice</span>
+                                <span class="text-gray-700 font-medium">Pr. Sarah Benzarti, Chef de service ORL, Hôpital Ibn El Jazar</span>
                             </div>
                         </div>
                         
-                        <!-- Additional sessions would go here -->
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <div class="mb-2 md:mb-0">
+                                    <span class="text-green-600 font-semibold">14:00 - 15:30</span>
+                                </div>
+                                <div class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">Table Ronde</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">3. Pneumologie : physiopathologie Asthme</h3>
+                            <p class="text-gray-600 mb-4">Analyse comparative de la physiopathologie de l'asthme chez les nourrissons, les enfants et les adultes, avec discussion des implications thérapeutiques spécifiques à chaque groupe d'âge et les dernières recherches sur les traitements innovants.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/100/eef7ee/14532d?text=M" alt="Intervenant" class="w-8 h-8 rounded-full mr-1">
+                                    <span class="text-gray-700 text-sm">Dr. Mehdi Karray, Pneumologue</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/100/eef7ee/14532d?text=L" alt="Intervenant" class="w-8 h-8 rounded-full mr-1">
+                                    <span class="text-gray-700 text-sm">Dr. Leila Ben Salah, Pédiatre-Pneumologue</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <div class="mb-2 md:mb-0">
+                                    <span class="text-green-600 font-semibold">16:00 - 17:30</span>
+                                </div>
+                                <div class="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Atelier Pratique</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">4. Techniques de kinésithérapie respiratoire pédiatrique</h3>
+                            <p class="text-gray-600 mb-4">Démonstration et pratique des techniques modernes de kinésithérapie respiratoire adaptées aux enfants asthmatiques et souffrant de complications respiratoires. Session pratique avec démonstration sur volontaires.</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/100/eef7ee/14532d?text=K" alt="Intervenant" class="w-10 h-10 rounded-full mr-2">
+                                <span class="text-gray-700 font-medium">Karim Baccouche, Kinésithérapeute spécialisé en pédiatrie</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Day 2 - Just showing preview -->
+                <!-- Day 2 -->
                 <div class="mb-10">
                     <div class="flex items-center mb-6">
-                        <div class="bg-green-600 text-white text-lg font-semibold py-2 px-4 rounded">Jour 2 • 26 Juillet</div>
+                        <div class="bg-green-600 text-white text-lg font-semibold py-2 px-4 rounded">Jour 2 • 11 Octobre</div>
                         <div class="h-px flex-grow bg-gray-200 ml-4"></div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                            <div class="mb-2 md:mb-0">
-                                <span class="text-green-600 font-semibold">09:00 - 10:30</span>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <div class="mb-2 md:mb-0">
+                                    <span class="text-green-600 font-semibold">09:00 - 10:30</span>
+                                </div>
+                                <div class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs font-medium rounded-full">Conférence</div>
                             </div>
-                            <div class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-full">Table Ronde</div>
+                            <h3 class="text-xl font-semibold mb-2">5. Approche psychanalyse de l'asthme chez l'enfant</h3>
+                            <p class="text-gray-600 mb-4">Analyse des dimensions psychologiques de l'asthme infantile fondée sur les textes révélés (Coran et Hadith), et exploration des approches thérapeutiques intégratives combinant psychologie moderne et sagesse traditionnelle.</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/100/eef7ee/14532d?text=F" alt="Intervenant" class="w-10 h-10 rounded-full mr-2">
+                                <span class="text-gray-700 font-medium">Dr. Fatima Zahra El Madani, Psychiatre et spécialiste en médecine islamique</span>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">L'Avenir du Coaching à l'Ère Numérique</h3>
-                        <p class="text-gray-600 mb-4">Comment les nouvelles technologies transforment-elles la pratique du coaching et ouvrent de nouvelles perspectives?</p>
-                        <div class="flex flex-wrap gap-2">
-                            <div class="flex items-center">
-                                <img src="https://placehold.co/100/eef7ee/14532d?text=M" alt="Intervenant" class="w-8 h-8 rounded-full mr-1">
-                                <span class="text-gray-700 text-sm">Marc Durand</span>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <div class="mb-2 md:mb-0">
+                                    <span class="text-green-600 font-semibold">11:00 - 12:30</span>
+                                </div>
+                                <div class="px-3 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full">Panel d'Experts</div>
                             </div>
+                            <h3 class="text-xl font-semibold mb-2">6. Traitement médicamenteux</h3>
+                            <p class="text-gray-600 mb-4">Présentation des protocoles thérapeutiques actuels pour l'amygdalite et l'asthme, avec un accent sur l'optimisation des traitements, la minimisation des effets secondaires et l'intégration de médicaments traditionnels et modernes.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/100/eef7ee/14532d?text=H" alt="Intervenant" class="w-8 h-8 rounded-full mr-1">
+                                    <span class="text-gray-700 text-sm">Pr. Hatem Masmoudi, Pharmacologue</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/100/eef7ee/14532d?text=N" alt="Intervenant" class="w-8 h-8 rounded-full mr-1">
+                                    <span class="text-gray-700 text-sm">Dr. Nadia Rekik, Allergologue</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <div class="mb-2 md:mb-0">
+                                    <span class="text-green-600 font-semibold">14:00 - 15:30</span>
+                                </div>
+                                <div class="px-3 py-1 bg-orange-100 text-orange-800 text-xs font-medium rounded-full">Atelier Pratique</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">7. Traitements endobiogenique</h3>
+                            <p class="text-gray-600 mb-4">Introduction à l'approche endobiogénique pour le traitement des pathologies respiratoires, avec étude de cas cliniques et démonstration de protocoles thérapeutiques intégrant les médicaments naturels et les ajustements du mode de vie.</p>
                             <div class="flex items-center">
-                                <img src="https://placehold.co/100/eef7ee/14532d?text=L" alt="Intervenant" class="w-8 h-8 rounded-full mr-1">
-                                <span class="text-gray-700 text-sm">Leila Khadhraoui</span>
+                                <img src="https://placehold.co/100/eef7ee/14532d?text=J" alt="Intervenant" class="w-10 h-10 rounded-full mr-2">
+                                <span class="text-gray-700 font-medium">Dr. Jean-Claude Lapraz, Spécialiste en endobiogénie</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                                <div class="mb-2 md:mb-0">
+                                    <span class="text-green-600 font-semibold">16:00 - 17:30</span>
+                                </div>
+                                <div class="px-3 py-1 bg-teal-100 text-teal-800 text-xs font-medium rounded-full">Session Interactive</div>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">8. Compléments alimentaires</h3>
+                            <p class="text-gray-600 mb-4">Analyse des données scientifiques sur l'efficacité des compléments alimentaires dans la gestion de l'asthme et des affections ORL, avec recommandations pratiques pour l'intégration dans les protocoles de soins et les remèdes issus de la tradition médicinale.</p>
+                            <div class="flex items-center">
+                                <img src="https://placehold.co/100/eef7ee/14532d?text=R" alt="Intervenant" class="w-10 h-10 rounded-full mr-2">
+                                <span class="text-gray-700 font-medium">Dr. Rim Ghachem, Nutritionniste et phytothérapeute</span>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="mt-4 text-center">
-                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Voir le programme complet →</a>
-                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="#" class="inline-block bg-green-600 text-white px-6 py-3 rounded-md font-medium hover:bg-green-700 transition-colors">Télécharger le programme complet (PDF)</a>
                 </div>
             </div>
         </div>
@@ -303,7 +384,7 @@
             <div class="max-w-3xl mx-auto text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Lieu du Congrès</h2>
                 <div class="w-16 h-1 bg-green-600 mx-auto mb-6"></div>
-                <p class="text-gray-600">Le congrès se tiendra au Centre de Conférences de Tunis, un lieu moderne et facilement accessible.</p>
+                <p class="text-gray-600">Le congrès se tiendra à hôtel le Continental de Kairouan, un lieu moderne et facilement accessible.</p>
             </div>
             
             <div class="flex flex-col md:flex-row gap-8">
@@ -363,11 +444,11 @@
     <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-r from-green-600 to-green-700 text-white">
         <div class="container mx-auto px-4 md:px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Prêt à participer au Congrès International de Coaching 2025 ?</h2>
-            <p class="text-lg max-w-2xl mx-auto mb-8">Inscrivez-vous dès maintenant pour vivre une expérience enrichissante et réseauter avec des professionnels du monde entier.</p>
+            <h2 class="text-3xl font-bold mb-6">Prêt à participer au 2ème congrès de CETMI amygdalite et asthme ?</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">Profitez de moments privilégiés pour échanger avec des experts nationaux et internationaux .ne manquer pas cette opportunité unique de formation, d’échange et de mise à jour de vos connaissances en pathologie Orl et Pneumologie dans un contexte islamique.</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="{{ url('/inscription/coach') }}" class="inline-block bg-white text-green-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">Inscription Coach</a>
-                <a href="{{ url('/inscription/etudiant') }}" class="inline-block bg-green-800 text-white px-6 py-3 rounded-md font-medium hover:bg-green-900 transition-colors">Inscription Étudiant</a>
+                <a href="{{ url('/inscription/coach') }}" class="inline-block bg-white text-green-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">Soumission des travaux scientifiques</a>
+                <a href="{{ url('/inscription/etudiant') }}" class="inline-block bg-green-800 text-white px-6 py-3 rounded-md font-medium hover:bg-green-900 transition-colors">Inscription</a>
             </div>
         </div>
     </section>

@@ -1,14 +1,23 @@
 <header class="w-full bg-white shadow-sm py-4">
     <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div class="flex items-center">
-            <a href="{{ url('/inscription') }}" class="text-2xl font-bold text-green-600">Congrès<span class="text-black">Coaching</span></a>
+            <a href="{{ url('/inscription') }}">
+            <img src="{{ asset('images/logo2.png') }}" alt="CongrèsCoaching" class="h-20 w-auto transition-transform duration-300 hover:scale-105">
+            </a>
+            <div class="flex flex-col leading-tight">
+                <span class="text-2xl font-bold text-black">CETMI</span>
+                <span class="text-sm text-gray-700">
+                    Centre d'Études Tunisien<br>
+                    De Médecine Islamique
+                </span>
+            </div>
         </div>
         <nav class="hidden md:flex items-center space-x-6">
             <a href="{{ url('/inscription') }}#about" class="text-sm font-medium text-black hover:text-green-600 transition-colors">À propos</a>
             <a href="{{ url('/inscription') }}#programme" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Programme</a>
             <a href="{{ url('/inscription') }}#intervenants" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Intervenants</a>
             <a href="{{ url('/inscription') }}#lieu" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Lieu</a>
-            <a href="{{ url('/inscription/coach') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Inscription Coach</a>
+            <a href="{{ url('/inscription/coach') }}#soumission" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Soumission</a>
             <a href="{{ url('/inscription/etudiant') }}" class="text-sm font-medium bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">Inscription Étudiant</a>
         </nav>
         <button type="button" class="md:hidden text-gray-600 hover:text-green-600 focus:outline-none">
@@ -24,6 +33,7 @@
             <a href="{{ url('/inscription') }}#programme" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Programme</a>
             <a href="{{ url('/inscription') }}#intervenants" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Intervenants</a>
             <a href="{{ url('/inscription') }}#lieu" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Lieu</a>
+            <a href="{{ url('/inscription/coach') }}#soumission" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Soumission</a>
             <a href="{{ url('/inscription/coach') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Inscription Coach</a>
             <a href="{{ url('/inscription/etudiant') }}" class="block px-3 py-2 text-base font-medium text-green-600">Inscription Étudiant</a>
         </div>
