@@ -1,144 +1,112 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6 text-white">
-            <h2 class="font-bold text-2xl">
-                {{ __('Tableau de Bord') }}
-            </h2>
-            <p class="text-blue-100 mt-2">{{ __('Bienvenue dans votre espace coaching') }}</p>
-        </div>
     </x-slot>
 
-    <div class="py-8">
+    <div class="py-8 bg-gray-50 min-h-screen">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-blue-500">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-blue-100 mr-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-gray-600 text-sm">{{ __('Total Coachs') }}</p>
-                            <p class="text-2xl font-bold text-gray-900">{{ $coaches->count() }}</p>
-                        </div>
+            <!-- Welcome Banner -->
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-100 relative overflow-hidden animate-fade-in">
+                <!-- Background decoration -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-full -translate-y-16 translate-x-16 opacity-20"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-200 to-pink-300 rounded-full translate-y-12 -translate-x-12 opacity-20"></div>
+                
+                <div class="relative z-10 flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg animate-bounce-in">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
                     </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-green-500">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-green-100 mr-4">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-gray-600 text-sm">{{ __('Vidéos Disponibles') }}</p>
-                            <p class="text-2xl font-bold text-gray-900">{{ $coaches->whereNotNull('video')->count() }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-purple-500">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-purple-100 mr-4">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <p class="text-gray-600 text-sm">{{ __('Programmes Actifs') }}</p>
-                            <p class="text-2xl font-bold text-gray-900">{{ $coaches->count() }}</p>
-                        </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900">Bonjour {{ auth()->user()->name ?? 'Utilisateur' }} ! 👋</h3>
+                        <p class="text-gray-600">Découvrez nos coachs experts et commencez votre parcours de développement personnel.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Coaches Section -->
-            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-2xl font-bold text-gray-900">{{ __('Nos Coachs Experts') }}</h3>
-                    <div class="flex items-center space-x-2">
-                        <span class="text-sm text-gray-500">{{ $coaches->count() }} {{ __('coachs disponibles') }}</span>
-                    </div>
-                </div>
-                
-                @if($coaches->count() > 0)
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        @foreach($coaches as $coach)
-                            <div class="group bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200">
-                                <!-- Coach Photo -->
-                                <div class="relative h-48 overflow-hidden">
-                                    @if($coach->photo)
-                                        <img src="{{ asset('storage/' . $coach->photo) }}" 
-                                             alt="{{ $coach->name }}" 
-                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                                    @else
-                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500">
-                                            <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </div>
-                                    @endif
-                                    <div class="absolute top-3 right-3">
-                                        <span class="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
-                                            {{ __('Coach') }}
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                <!-- Coach Info -->
-                                <div class="p-6">
-                                    <div class="flex items-center justify-between mb-3">
-                                        <h4 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{{ $coach->name }}</h4>
-                                        <div class="flex items-center">
-                                            <div class="w-2 h-2 bg-green-400 rounded-full mr-1"></div>
-                                            <span class="text-xs text-gray-500">{{ __('Actif') }}</span>
-                                        </div>
-                                    </div>
-                                    
-                                    @if($coach->description)
-                                        <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
-                                            {{ Str::limit($coach->description, 120) }}
-                                        </p>
-                                    @else
-                                        <p class="text-gray-400 text-sm italic mb-4">
-                                            {{ __('Aucune description disponible') }}
-                                        </p>
-                                    @endif
+            <!-- Stats Cards Component -->
+            <div class="mb-8 animate-slide-up">
+                <livewire:stats-cards />
+            </div>
 
-                                    <!-- Action Buttons -->
-                                    <div class="flex space-x-2">                                        
-                                        @if($coach->video)
-                                            <a href="{{ route('coach.show', $coach) }}" class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-2.5 px-4 rounded-lg transition-all duration-200 text-sm text-center">
-                                                {{ __('Voir les Vidéos') }}
-                                            </a>
-                                        @else
-                                            <button class="flex-1 bg-gray-100 text-gray-400 font-medium py-2.5 px-4 rounded-lg text-sm cursor-not-allowed">
-                                                {{ __('Pas de vidéo') }}
-                                            </button>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                @else
-                    <!-- No Coaches Message -->
-                    <div class="text-center py-12">
-                        <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
-                            <svg class="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+            <!-- Quick Actions -->
+            {{-- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 animate-fade-in">
+                <a href="#videos" class="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-lg hover:border-green-200 transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-xl font-medium text-gray-900 mb-2">{{ __('Aucun coach disponible') }}</h3>
-                        <p class="text-gray-600 mb-6">{{ __('Les coachs seront bientôt disponibles. Revenez plus tard !') }}</p>
-                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                            {{ __('Actualiser la page') }}
-                        </button>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900 group-hover:text-green-600 transition-colors">Vidéos Récentes</h4>
+                            <p class="text-sm text-gray-600">Regardez les dernières vidéos</p>
+                        </div>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-green-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
                     </div>
-                @endif
+                </a>
+                
+                <a href="#programs" class="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-lg hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">Programmes</h4>
+                            <p class="text-sm text-gray-600">Explorez nos programmes</p>
+                        </div>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="#favorites" class="bg-white rounded-xl shadow-sm p-6 border border-gray-200 hover:shadow-lg hover:border-purple-200 transition-all duration-300 transform hover:-translate-y-1 group">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors">Favoris</h4>
+                            <p class="text-sm text-gray-600">Vos coachs préférés</p>
+                        </div>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div> --}}
+
+            <!-- Coaches Grid Component -->
+            <div class="animate-slide-up">
+                <livewire:coaches-grid />
+            </div>
+            
+            <!-- Footer -->
+            <div class="mt-12 bg-white rounded-xl shadow-sm p-6 border border-gray-200 animate-fade-in">
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Besoin d'aide ?</h4>
+                    <p class="text-gray-600 mb-4">Notre équipe est là pour vous accompagner dans votre parcours de coaching.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center hover:scale-105">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Contactez-nous
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center hover:scale-105">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            FAQ
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

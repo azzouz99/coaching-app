@@ -15,30 +15,26 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-white text-black antialiased min-h-screen">
-        <header class="w-full bg-white shadow-sm py-4">
-            <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold text-green-600">Coaching<span class="text-black">App</span></a>
+        <header class="w-full bg-white shadow-md py-4">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center">
+                        <a href="/" class="px-4 py-2 bg-green-600 text-white font-medium rounded-md shadow hover:bg-green-700 transition-colors">
+                            Accueil
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="/" class="flex items-center">
+                            <img src="{{ asset('images/logo1.jpg') }}" alt="Logo 1" class="h-16">
+                        </a>
+                        <a href="/" class="flex items-center">
+                            <img src="{{ asset('images/logo2.png') }}" alt="Logo 2" class="h-16">
+                        </a>
+                    </div>
+                    <div class="w-24">
+                        <!-- Empty div to balance the layout -->
+                    </div>
                 </div>
-                <nav class="flex items-center space-x-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">
-                                Tableau de bord
-                            </a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">
-                                Connexion
-                            </a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="text-sm font-medium bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-                                    S'inscrire
-                                </a>
-                            @endif
-                        @endauth
-                    @endif
-                </nav>
             </div>
         </header>
 

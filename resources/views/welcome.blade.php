@@ -11,98 +11,118 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="bg-white text-black antialiased min-h-screen">
-        <header class="w-full bg-white shadow-sm py-4">
-            <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
-                <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold text-green-600">Coaching<span class="text-black">App</span></a>
-                </div>
-                <nav class="flex items-center space-x-4">
-                    @if (Route::has('login'))
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">
-                                Tableau de bord
-                            </a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">
-                                Connexion
-                            </a>
+      @include('partials.header')
 
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="text-sm font-medium bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-                                    S'inscrire
-                                </a>
-                            @endif
-                        @endauth
-                    @endif
-                </nav>
-            </div>
-        </header>
-
-        <main class="container mx-auto px-4 md:px-6 py-12">
-            <!-- Subscription Banner -->
-            <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-6 mb-10 shadow-sm border border-green-200">
-                <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="mb-6 md:mb-0 md:mr-6">
-                        <h2 class="text-2xl font-bold text-green-800 mb-2">Accès Premium aux Vidéos de Coaching</h2>
-                        <p class="text-green-700 mb-4">Débloquez l'accès à toutes nos vidéos exclusives avec un paiement unique !</p>
-                        <ul class="space-y-2 mb-4">
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Accès illimité à toutes les vidéos</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Techniques et conseils exclusifs de nos coachs professionnels</span>
-                            </li>
-                            <li class="flex items-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Paiement unique, accès à vie</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="text-center md:text-right">
-                        <div class="bg-white p-5 rounded-lg shadow-md border border-green-200 mb-4">
-                            <div class="text-3xl font-bold text-green-600 mb-1">49,99 TND</div>
-                            <div class="text-sm text-gray-500 mb-4">Paiement unique</div>
-                            @auth
-                                <a href="{{ route('subscription.checkout') }}" class="block w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition-colors">
-                                    S'abonner maintenant
-                                </a>
-                            @else
-                                <a href="{{ route('register') }}" class="block w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition-colors">
-                                    Créer un compte
-                                </a>
-                                <p class="text-xs text-gray-500 mt-2">Créez un compte pour vous abonner</p>
-                            @endauth
-                        </div>
-                        {{-- <div class="text-sm text-gray-600">Satisfaction garantie ou remboursé pendant 30 jours</div> --}}
+        <!-- Video Hero Section -->
+        <div class="relative w-full h-screen overflow-hidden">
+            <!-- Video Background -->
+            <video 
+                class="absolute top-0 left-0 w-full h-full object-cover"
+                autoplay 
+                muted 
+                loop
+                {{-- poster="{{ asset('images/video-poster.jpg') }}" --}}
+            >
+                <source src="{{ Storage::disk('s3')->temporaryUrl('intro.mp4',now()->addMinutes(60)) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Dark Overlay -->
+            <div class="absolute inset-0 bg-black/60"></div>
+            
+            <!-- Content Overlay -->
+            <div class="relative z-10 flex items-center justify-center h-full">
+                <div class="text-center text-white px-4 max-w-4xl">
+                    <!-- Welcome Text -->
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl animate-fade-in-up">
+                        Bienvenue
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl mb-8 drop-shadow-xl animate-fade-in-up animation-delay-300">
+                        Centre d'Études Tunisien de Médecine Islamique
+                    </p>
+                    
+                    <!-- Description -->
+                    <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-fade-in-up animation-delay-600">
+                        Découvrez une approche holistique de la santé qui unit corps et esprit selon les principes de la médecine islamique
+                    </p>
+                    
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-900">
+                        <a href="{{ route('register') }}" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                            Commencer maintenant
+                        </a>
+                        <a href="#mission" class="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold border-2 border-white/30 backdrop-blur-sm hover:backdrop-blur-md transition-all duration-300">
+                            En savoir plus
+                        </a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
 
-            <div class="flex flex-col md:flex-row gap-10">
-                <!-- Left Column: Logos, Photo Menu, Contact -->
-                <div class="md:w-1/3 space-y-8">
-                    <!-- Logo Section -->
-                    <div class="flex flex-col space-y-6">
-                        <div class="flex justify-center space-x-4">
-                            <!-- Logo 1 - Replace with your actual logo -->
-                            <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center">
-                                <span class="text-green-600 font-bold">LOGO 1</span>
+        <!-- Mission Section -->
+        <div id="mission" class="bg-gradient-to-b from-gray-50 to-white py-12">
+            <div class="container mx-auto px-4 md:px-6">
+                <!-- Centered Mission Statement -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-200/50">
+                        <div class="space-y-6">
+                            <!-- Notre objectif ultime -->
+                            <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl shadow-sm">
+                                <h2 class="text-lg font-bold text-green-700 mb-3 flex items-center">
+                                    <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
+                                    Notre objectif ultime
+                                </h2>
+                                <p class="text-gray-600 text-sm leading-relaxed">Devenir la destination santé la plus fiable en mettant l'accent sur le concept holistique de la médecine islamique, qui prend soin du corps et de l'esprit.</p>
                             </div>
                             
-                            <!-- Logo 2 - Replace with your actual logo -->
-                            <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center">
-                                <span class="text-green-600 font-bold">LOGO 2</span>
+                            <!-- Notre mission -->
+                            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl shadow-sm">
+                                <h2 class="text-lg font-bold text-blue-700 mb-3 flex items-center">
+                                    <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
+                                    Notre mission
+                                </h2>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">Créer un modèle de soins de santé intégrant une perspective islamique holistique pour soigner le corps et l'esprit humains, en adhérant aux meilleures normes médicales internationales et en suivant les principes divins de traitement et d'éthique.</p>
+                                <p class="text-gray-600 font-arabic text-right text-base bg-white/50 p-3 rounded-lg">( واقتفاء المعايير الربانية في المعاملة والأخلاق)</p>
+                            </div>
+                            
+                            <!-- Notre approche -->
+                            <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl shadow-sm">
+                                <h2 class="text-lg font-bold text-purple-700 mb-3 flex items-center">
+                                    <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                                    Notre approche
+                                </h2>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">Cette formation est progressive, étape par étape, afin d'inculquer à l'étudiant des connaissances complètes pour mieux comprendre le patient, examiner ses antécédents et ajuster son équilibre.</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">Al-Razi, en médecine et en traitement, a toujours recommandé de commencer par l'alimentation. Si le patient n'en tire aucun bénéfice, il doit recourir à des médicaments « Si un homme sage peut soigner avec de la nourriture sans médicament, il a atteint le bonheur. »</p>
+                                <p class="text-gray-600 font-arabic text-right text-base bg-white/50 p-3 rounded-lg">إن استطاع الحكيم أن يعالج بالأغذية دون الأدوية فقد وافق السعادة</p>
+                            </div>
+                            
+                            <!-- Le rôle du centre -->
+                            <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl shadow-sm">
+                                <h2 class="text-lg font-bold text-amber-700 mb-3 flex items-center">
+                                    <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
+                                    Le rôle du centre
+                                </h2>
+                                <p class="text-gray-600 text-sm leading-relaxed">Encourager le travail d'équipe et organiser les soins de santé</p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <main class="container mx-auto px-4 md:px-6 py-12">
+            <div class="flex flex-col md:flex-row gap-10">
+                <!-- Left Column: Photo Menu, Contact -->
+                <div class="md:w-1/3 space-y-8">
 
                     <!-- Photo Menu -->
                     <div class="bg-white shadow-md rounded-lg p-6">
@@ -153,7 +173,7 @@
 
                 <!-- Right Column: Coaches Display -->
                 <div class="md:w-2/3">
-                    <h1 class="text-3xl font-bold mb-8 text-green-600">Nos Coachs</h1>
+                    <h1 class="text-3xl font-bold mb-8 text-green-600">Nos Intervenant</h1>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         @foreach($coaches as $coach)
                         <div class="bg-white shadow-md rounded-lg overflow-hidden">
@@ -161,7 +181,7 @@
                                 <!-- Coach Photo -->
                                 <div class="w-20 h-20 mr-4">
                                     @if($coach->photo)
-                                        <img src="{{ asset('storage/' . $coach->photo) }}" alt="{{ $coach->name }}" class="w-full h-full object-cover rounded-full">
+                                        <img src="{{ Storage::disk('s3')->temporaryUrl($coach->photo, now()->addMinutes(60)) }}" alt="{{ $coach->name }}" class="w-full h-full object-cover rounded-full">
                                     @else
                                         <div class="w-full h-full bg-gray-200 rounded-full flex items-center justify-center">
                                             <span class="text-xl text-gray-500">{{ substr($coach->name, 0, 1) }}</span>
@@ -194,7 +214,7 @@
         <footer class="bg-white border-t border-gray-200 mt-12">
             <div class="container mx-auto px-4 md:px-6 py-6">
                 <div class="text-center">
-                    <p class="text-sm text-gray-600">© {{ date('Y') }} CoachingApp. Tous droits réservés.</p>
+                    <p class="text-sm text-gray-600">© {{ date('Y') }} CETMI. Tous droits réservés.</p>
                 </div>
             </div>
         </footer>

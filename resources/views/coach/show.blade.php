@@ -25,7 +25,7 @@
                         <div class="text-center">
                             <div class="w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden shadow-lg">
                                 @if($coach->photo)
-                                    <img src="{{ asset('storage/' . $coach->photo) }}" 
+                                    <img src="{{ Storage::disk('s3')->temporaryUrl($coach->photo, now()->addMinutes(60)) }}" 
                                          alt="{{ $coach->name }}" 
                                          class="w-full h-full object-cover">
                                 @else

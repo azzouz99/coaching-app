@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $coaches = Coach::all();
     return view('welcome', compact('coaches'));
-});
+})->name('welcome');
 Route::get('/inscription', function () {
     return view('Inscription.index');
 })->name('inscription');
@@ -25,8 +25,7 @@ Route::get('/inscription/about', function () {
     return view('Inscription.components.about-us');
 })->name('inscription.about');
 Route::get('/dashboard', function () {
-    $coaches = Coach::all();
-    return view('dashboard', compact('coaches'));
+    return view('dashboard');
 })->middleware(['auth', 'verified', 'subscribed'])->name('dashboard');
 
 Route::get('/coach/{coach}', function (Coach $coach) {

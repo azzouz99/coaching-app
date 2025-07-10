@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Arabic';
+    src: url('/fonts/Amiri-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-arabic {
+    font-family: 'Arabic', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
