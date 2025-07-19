@@ -12,8 +12,8 @@ class Coach extends Model
         'specialties' => 'array',
     ];
     
-    public function video()
+    public function courses()
     {
-        return $this->hasOne(Video::class);
+        return $this->hasMany(Course::class);
     }
 }

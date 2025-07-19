@@ -18,7 +18,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-bold text-gray-900">Bonjour {{ auth()->user()->name ?? 'Utilisateur' }} ! 👋</h3>
-                        <p class="text-gray-600">Découvrez nos coachs experts et commencez votre parcours de développement personnel.</p>
+                        <p class="text-gray-600">Découvrez nos Intervenants experts et commencez votre parcours de développement personnel.</p>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
             <div class="mt-12 bg-white rounded-xl shadow-sm p-6 border border-gray-200 animate-fade-in">
                 <div class="text-center">
                     <h4 class="text-lg font-semibold text-gray-900 mb-2">Besoin d'aide ?</h4>
-                    <p class="text-gray-600 mb-4">Notre équipe est là pour vous accompagner dans votre parcours de coaching.</p>
+                    <p class="text-gray-600 mb-4">Notre équipe est là pour vous accompagner dans votre parcours de médecine islamique.</p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center hover:scale-105">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

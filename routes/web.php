@@ -32,6 +32,10 @@ Route::get('/coach/{coach}', function (Coach $coach) {
     return view('coach.show', compact('coach'));
 })->middleware(['auth', 'verified', 'subscribed'])->name('coach.show');
 
+Route::get('/course/{course}', function (\App\Models\Course $course) {
+    return view('course.show', compact('course'));
+})->middleware(['auth', 'verified', 'subscribed'])->name('course.show');
+
 // Routes pour l'abonnement
 Route::middleware('auth')->group(function () {
     Route::get('/subscription/checkout', [SubscriptionController::class, 'checkout'])->name('subscription.checkout');

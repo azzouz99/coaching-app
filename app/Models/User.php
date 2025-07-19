@@ -51,9 +51,5 @@ class User extends Authenticatable
         return $this->hasOne(Subscription::class);
     }
 
-    // If you track views
-    public function videoViews()
-    {
-        return $this->hasMany(VideoView::class);
-    }
+
 }

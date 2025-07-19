@@ -1,6 +1,6 @@
 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
-        <h3 class="text-2xl font-bold text-gray-900">Nos Coachs Experts</h3>
+        <h3 class="text-2xl font-bold text-gray-900">Nos Intervenants Experts</h3>
         
         <!-- Search Input -->
         <div class="relative">
@@ -39,7 +39,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             @foreach($coaches as $coach)
                 <div class="group bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200 h-96 flex flex-col">
-                    <!-- Coach Photo -->
+                    <!-- Intervenant Photo -->
                     <div class="relative h-48 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
                         @if($coach->photo)
                             <img src="{{ Storage::disk('s3')->temporaryUrl($coach->photo, now()->addMinutes(60)) }}" 
@@ -54,12 +54,12 @@
                         @endif
                         <div class="absolute top-3 right-3">
                             <span class="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1.5 rounded-full text-sm font-medium">
-                                Coach
+                                Intervenant
                             </span>
                         </div>
                     </div>
                     
-                    <!-- Coach Info -->
+                    <!-- Intervenant Info -->
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex-1">
                             <div class="flex items-center justify-between mb-3">
@@ -83,13 +83,13 @@
 
                         <!-- Action Buttons -->
                         <div class="flex space-x-2 mt-auto">                                        
-                            @if($coach->video)
+                            @if($coach->courses->count() > 0)
                                 <a href="{{ route('coach.show', $coach) }}" class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 text-sm text-center">
-                                    Voir les Vidéos
+                                    Voir les cours
                                 </a>
                             @else
                                 <button class="flex-1 bg-gray-100 text-gray-400 font-medium py-3 px-4 rounded-lg text-sm cursor-not-allowed">
-                                    Pas de vidéo
+                                    Pas de cours
                                 </button>
                             @endif
                         </div>
@@ -103,7 +103,7 @@
             {{ $coaches->links() }}
         </div>
     @else
-        <!-- No Coaches Message -->
+        <!-- No Intervenantes Message -->
         <div class="text-center py-12">
             <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                 <svg class="w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
