@@ -13,60 +13,45 @@
     <body class="bg-white text-black antialiased min-h-screen">
       @include('partials.header')
 
-        <!-- Video Hero Section -->
-        <div class="relative w-full h-screen overflow-hidden">
-            <!-- Video Background -->
-            <video 
-                class="absolute top-0 left-0 w-full h-full object-cover"
-                autoplay 
-                muted 
-                loop
-                {{-- poster="{{ asset('images/video-poster.jpg') }}" --}}
-            >
-                <source src="{{ Storage::disk('s3')->temporaryUrl('intro.mp4',now()->addMinutes(60)) }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <!-- Dark Overlay -->
-            <div class="absolute inset-0 bg-black/60"></div>
-            
-            <!-- Content Overlay -->
-            <div class="relative z-10 flex items-center justify-center h-full">
-                <div class="text-center text-white px-4 max-w-4xl">
-                    <!-- Welcome Text -->
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl animate-fade-in-up">
-                        Bienvenue
-                    </h1>
-                    
-                    <!-- Subtitle -->
-                    <p class="text-xl md:text-2xl mb-8 drop-shadow-xl animate-fade-in-up animation-delay-300">
-                        Centre d'Études Tunisien de Médecine Islamique
-                    </p>
-                    
-                    <!-- Description -->
-                    <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-lg animate-fade-in-up animation-delay-600">
-                        Découvrez une approche holistique de la santé qui unit corps et esprit selon les principes de la médecine islamique
-                    </p>
-                    
-                    <!-- Call to Action Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-900">
-                        <a href="{{ route('register') }}" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                            Commencer maintenant
-                        </a>
-                        <a href="#mission" class="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg text-lg font-semibold border-2 border-white/30 backdrop-blur-sm hover:backdrop-blur-md transition-all duration-300">
-                            En savoir plus
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
+    <section class="bg-gradient-to-b from-green-100 to-white py-24 text-center shadow-md shadow-green-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-black drop-shadow-2xl animate-fade-in-up">
+                BIENVENUE
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 text-gray-800 animate-fade-in-up animation-delay-300">
+                Centre d'études et de Recherches En Médecine Islamique
+            </p>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-700 leading-relaxed animate-fade-in-up animation-delay-600">
+                Découvrez une approche holistique de la santé qui unit corps et esprit selon les principes de la médecine islamique
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up animation-delay-900">
+                <a href="{{ route('register') }}" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    Commencer maintenant
+                </a>
+                <a href="#mission" class="bg-white/20 hover:bg-white/30 text-green-600 border border-green-600 px-8 py-4 rounded-lg text-lg font-semibold backdrop-blur-sm hover:backdrop-blur-md transition-all duration-300">
+                    En savoir plus
+                </a>
             </div>
         </div>
+    </section>
+
+        <!-- Video Section -->
+        <section class="py-12 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-300 border border-gray-200">
+                    <video 
+                        class="w-full h-auto"
+                        loop
+                        controls
+                    >
+                        <source src="{{ Storage::disk('s3')->temporaryUrl('intro.mp4', now()->addMinutes(60)) }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- Mission Section -->
         <div id="mission" class="bg-gradient-to-b from-gray-50 to-white py-12">
@@ -122,7 +107,7 @@
         <main class="container mx-auto px-4 md:px-6 py-12">
             <div class="flex flex-col md:flex-row gap-10">
                 <!-- Left Column: Photo Menu, Contact -->
-                <div class="md:w-1/3 space-y-8">
+                <div class="md:w-1/3 space-y-8 order-2 md:order-1">
 
                     <!-- Photo Menu -->
                     <div class="bg-white shadow-md rounded-lg p-6">
@@ -172,7 +157,7 @@
                 </div>
 
                 <!-- Right Column: Coaches Display -->
-                <div class="md:w-2/3">
+                <div class="md:w-2/3 order-1 md:order-2">
                     <h1 class="text-3xl font-bold mb-8 text-green-600">Nos Intervenant</h1>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         @foreach($coaches as $coach)
