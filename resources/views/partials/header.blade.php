@@ -18,6 +18,12 @@
         <nav class="hidden md:flex items-center space-x-6">
             @auth
             <a href="{{ route('dashboard') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Tableau de bord</a>
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button type="submit" class="text-sm font-medium text-green-600 hover:text-green-800 transition-colors">
+                    Se déconnecter
+                </button>
+            </form>
             @endauth
             @if (!auth()->check())
             <a href="{{ route('login')  }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Se Connecter</a>
@@ -38,10 +44,17 @@
         <div class="px-4 pt-2 pb-3 space-y-1">
             @auth
             <a href="{{ route('dashboard') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Tableau de bord</a>
-            @endauth
-            <a href="{{ route('register') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">À propos</a>
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button type="submit" class="block w-full text-left px-3 py-2 text-base font-medium text-green-600 hover:text-green-800">
+                    Se déconnecter
+                </button>
+            </form>
+            @else
+            {{-- <a href="{{ route('register') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">À propos</a> --}}
             <a href="{{ route('login') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Se Connecter</a>
             <a href="{{ route('register') }}" class="block px-3 py-2 text-base font-medium text-green-600">Inscription</a>
+            @endauth
         </div>
     </div>
 </header>
