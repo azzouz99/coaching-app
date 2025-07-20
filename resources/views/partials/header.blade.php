@@ -19,9 +19,10 @@
             @auth
             <a href="{{ route('dashboard') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Tableau de bord</a>
             @endauth
-            <a href="{{ route('register')  }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">À propos</a>
+            @if (!auth()->check())
             <a href="{{ route('login')  }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Se Connecter</a>
             <a href="{{ route('register') }}" class="text-sm font-medium bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">Inscription</a>
+            @endif
         </nav>
 
         <!-- Hamburger Button -->

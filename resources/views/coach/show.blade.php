@@ -8,7 +8,7 @@
                     </h2>
                     <p class="text-green-100 mt-2">{{ __('Intervenant Expert') }}</p>
                 </div>
-                <a href="{{ route('dashboard') }}" class="bg-white/20 hover:bg-white/30 text-black px-4 py-2 rounded-lg transition-colors">
+                <a href="{{ route('dashboard') }}" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-colors">
                     {{ __('← Retour au tableau de bord') }}
                 </a>
             </div>
@@ -47,8 +47,8 @@
                                     <div class="text-sm text-gray-600">{{ __('Cours') }}</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-green-600">100%</div>
-                                    <div class="text-sm text-gray-600">{{ __('Succès') }}</div>
+                                    <div class="text-2xl font-bold text-green-600">{{$coach->courses->whereNotNull('video_url')->count();}}</div>
+                                    <div class="text-sm text-gray-600">{{ __('Vidéo') }}</div>
                                 </div>
                             </div>
                         </div>
