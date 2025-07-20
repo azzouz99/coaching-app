@@ -1,11 +1,11 @@
 <header class="w-full bg-white shadow-sm py-4" x-data="{ open: false }">
     <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div class="flex items-center">
-            <a href="{{ url('/inscription') }}">
+            <a href="{{ url('/') }}">
                 <img src="{{ asset('images/logo2.png') }}" alt="CongrèsCoaching" class="h-20 w-auto transition-transform duration-300 hover:scale-105">
             </a>
             <div class="flex flex-col leading-tight ml-2">
-                <span class="text-2xl font-bold text-black">CETMI</span>
+                <span class="text-2xl font-bold text-black">CERMI</span>
                 <span class="text-sm text-gray-700 leading-snug">
                     Centre d'Études et
                     de Recherches en

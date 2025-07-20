@@ -158,7 +158,7 @@
 
                 <!-- Right Column: Coaches Display -->
                 <div class="md:w-2/3 order-1 md:order-2">
-                    <h1 class="text-3xl font-bold mb-8 text-green-600">Nos Intervenant</h1>
+                    <h1 class="text-3xl font-bold mb-8 text-green-600">Nos Intervenants</h1>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         @foreach($coaches as $coach)
                         <div class="bg-white shadow-md rounded-lg overflow-hidden">

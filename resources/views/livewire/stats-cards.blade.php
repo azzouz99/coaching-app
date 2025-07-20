@@ -8,7 +8,7 @@
                 </svg>
             </div>
             <div>
-                <p class="text-gray-600 text-sm font-medium">Total Coachs</p>
+                <p class="text-gray-600 text-sm font-medium">Total Intervenants</p>
                 <p class="text-3xl font-bold text-gray-900">{{ $totalCoaches }}</p>
             </div>
         </div>
