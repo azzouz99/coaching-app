@@ -17,22 +17,14 @@
     <body class="bg-white text-black antialiased min-h-screen">
         <header class="w-full bg-white shadow-md py-4">
             <div class="container mx-auto px-4 md:px-6">
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center">
-                        <a href="/" class="px-4 py-2 bg-green-600 text-white font-medium rounded-md shadow hover:bg-green-700 transition-colors">
-                            Accueil
-                        </a>
-                    </div>
-                    <div class="flex items-center space-x-4">
+                <div class="flex items-center justify-center w-full">
+                    <div class="flex items-center justify-center space-x-4">
                         <a href="/" class="flex items-center">
                             <img src="{{ asset('images/logo1.jpg') }}" alt="Logo 1" class="h-16">
                         </a>
                         <a href="/" class="flex items-center">
                             <img src="{{ asset('images/logo2.png') }}" alt="Logo 2" class="h-16">
                         </a>
-                    </div>
-                    <div class="w-24">
-                        <!-- Empty div to balance the layout -->
                     </div>
                 </div>
             </div>
@@ -49,7 +41,7 @@
         <footer class="bg-white border-t border-gray-200 mt-12">
             <div class="container mx-auto px-4 md:px-6 py-6">
                 <div class="text-center">
-                    <p class="text-sm text-gray-600">© {{ date('Y') }} CoachingApp. Tous droits réservés.</p>
+                    <p class="text-sm text-gray-600">© {{ date('Y') }} CERMI. Tous droits réservés.</p>
                 </div>
             </div>
         </footer>
