@@ -32,10 +32,16 @@ Route::middleware(['auth', 'verified', 'subscribed'])->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/subscription/checkout', [SubscriptionController::class, 'checkout'])
          ->name('subscription.checkout');
+    Route::get('/subscription/trial', [SubscriptionController::class, 'freeCheckout'])
+         ->name('subscription.trial');
     Route::post('/subscription/process', [SubscriptionController::class, 'process'])
          ->name('subscription.process');
     Route::get('/subscription/success',  [SubscriptionController::class, 'success'])
          ->name('subscription.success');
+
+    Route::get('/subscription/trial-success',
+        [SubscriptionController::class, 'trialSuccess'])
+        ->name('subscription.trial.success');
 });
 
 // Profile routes (only auth required)

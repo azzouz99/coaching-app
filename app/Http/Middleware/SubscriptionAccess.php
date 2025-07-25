@@ -15,21 +15,20 @@ class SubscriptionAccess
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next)
     {
-        // Vérifier si l'utilisateur est connecté
-        if (!Auth::check()) {
+        $user = Auth::user();
+
+        // If not logged in, redirect to login
+        if (! $user) {
             return redirect()->route('login');
         }
 
-        // Vérifier si l'utilisateur a un abonnement payé
-        $hasSubscription = Subscription::where('user_id', Auth::id())
-                                      ->where('paid', true)
-                                      ->exists();
-        
-        if (!$hasSubscription) {
-            return redirect()->route('subscription.checkout')
-                ->with('error', 'Vous devez souscrire à un abonnement payant pour accéder à cette page.');
+        // No subscription or not active (expired/cancelled)
+        if (! $user->subscription || ! $user->subscription->isActive()) {
+            return redirect()
+                ->route('subscription.checkout')
+                ->with('error', 'Vous devez souscrire à un abonnement actif pour accéder à cette page.');
         }
 
         return $next($request);
