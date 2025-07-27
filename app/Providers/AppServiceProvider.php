@@ -21,5 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::component('layouts.inscription', 'inscription-layout');
+        Blade::directive('nl2br', function ($expression) {
+        return "<?php echo nl2br(e($expression)); ?>";
+});
     }
 }
