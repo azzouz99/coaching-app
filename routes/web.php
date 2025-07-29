@@ -5,6 +5,8 @@ use App\Http\Controllers\SubscriptionController;
 use App\Models\Coach;
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
+
 
 // Public pages
 Route::get('/', fn() => view('welcome', [
@@ -22,10 +24,28 @@ require __DIR__.'/auth.php';
 // Protected: must be authenticated, email-verified, and subscribed
 Route::middleware(['auth', 'verified', 'subscribed'])->group(function () {
     Route::view('/dashboard',      'dashboard')->name('dashboard');
-    Route::get('/coach/{coach}',   fn(Coach $coach)   => view('coach.show',   compact('coach')))
-         ->name('coach.show');
-    Route::get('/course/{course}', fn(Course $course) => view('course.show',  compact('course')))
-         ->name('course.show');
+     Route::get('/coach/{coach}', function ($id) {
+     $coach = Cache::remember("coach:$id", now()->addDays(30), function () use ($id) {
+          return \App\Models\Coach::findOrFail($id);
+     });
+
+     return view('coach.show', compact('coach'));
+     })->name('coach.show');
+     Route::get('/course/{course}', function ($id) {
+     $course = Cache::remember("course:$id", now()->addDays(30), function () use ($id) {
+          return \App\Models\Course::findOrFail($id);
+     });
+     /** run these commands to clear cache
+      * php artisan cache:forget "coach:$coach->id"
+      * php artisan cache:forget "course:$course->id"
+      * or
+      * Cache::forget("coach:$coach->id");
+      *  Cache::forget("course:$course->id");
+      */
+
+     return view('course.show', compact('course'));
+     })->name('course.show');
+
 });
 
 // Subscription checkout & process (only auth required)

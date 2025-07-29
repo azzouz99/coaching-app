@@ -84,12 +84,12 @@
                             </div>
                             
                             <!-- Share Button -->
-                            <button class="w-full mt-6 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg transition-colors flex items-center justify-center font-medium">
+                            {{-- <button class="w-full mt-6 bg-gray-100 hover:bg-gray-200 text-gray-800 py-2 px-4 rounded-lg transition-colors flex items-center justify-center font-medium">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path>
                                 </svg>
                                 {{ __('Partager') }}
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
 
@@ -125,29 +125,21 @@
                                     $documentUrl = Storage::disk('s3')->temporaryUrl($course->course_url, now()->addMinutes(60));
                                     
                                     // Google Docs Viewer URL
-                                    $googleDocsUrl = "https://docs.google.com/viewer?url=" . urlencode($documentUrl) . "&embedded=true";
+                                    
                                 @endphp
+                                
                                 
                                 <h3 class="text-xl font-bold text-gray-900 mb-4">{{ $fileType }}</h3>
                                 <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                                     <!-- Document Viewer -->
                                     <div class="aspect-[16/9] w-full h-auto">
-                                        @if(strtolower($fileExtension) === 'pdf')
                                             <!-- Native PDF Viewer -->
-                                            <iframe 
-                                                src="{{ $documentUrl }}#toolbar=0" 
-                                                class="w-full h-full"
-                                                frameborder="0"
-                                            ></iframe>
-                                        @else
-                                            <!-- Google Docs Viewer for other document types -->
-                                            <iframe 
-                                                src="{{ $googleDocsUrl }}" 
-                                                class="w-full h-full"
-                                                frameborder="0"
-                                                allowfullscreen
-                                            ></iframe>
-                                        @endif
+                                        <iframe
+                                            src="{{ asset('pdfjs/web/viewer.html') }}?file={{ urlencode($documentUrl) }}"
+                                            class="w-full h-[700px] border rounded-lg"
+                                            frameborder="0"
+                                        ></iframe>
+
                                     </div>
                                     
                                     <!-- Document Info -->
@@ -170,6 +162,7 @@
                                     <video 
                                         class="w-full h-full" 
                                         controls
+                                        controlsList="nodownload"
                                         poster="{{ asset('images/video-poster.jpg') }}"
                                     >
                                         <source src="{{ Storage::disk('s3')->temporaryUrl($course->video_url, now()->addMinutes(60)) }}" type="video/mp4">
@@ -276,4 +269,11 @@
             @endif
         </div>
     </div>
+@push('scripts')
+<script>
+    document.addEventListener('contextmenu', event => {
+        event.preventDefault();
+    });
+</script>
+@endpush
 </x-app-layout>
