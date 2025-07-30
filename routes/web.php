@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Cache;
 
 // Public pages
 Route::get('/', fn() => view('welcome', [
-    'coaches' => Coach::all(),
+    'coaches' => Coach::latest()->take(6)->get(),
 ]))->name('welcome');
 
 Route::view('/inscription',          'Inscription.index')->name('inscription');
