@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionController;
 use App\Models\Coach;
@@ -18,11 +19,13 @@ Route::view('/inscription/coach',    'Inscription.components.coach-inscription')
 Route::view('/inscription/etudiant', 'Inscription.components.student-inscription')->name('inscription.etudiant');
 Route::view('/inscription/about',    'Inscription.components.about-us')->name('inscription.about');
 
+
 // Include Breeze’s auth routes (login/register/verification)
 require __DIR__.'/auth.php';
 
 // Protected: must be authenticated, email-verified, and subscribed
 Route::middleware(['auth', 'verified', 'subscribed'])->group(function () {
+     Route::get('/viewer/{course}', [CourseController::class, 'secureViewer'])->name('course.viewer');
     Route::view('/dashboard',      'dashboard')->name('dashboard');
      Route::get('/coach/{coach}', function ($id) {
      $coach = Cache::remember("coach:$id", now()->addDays(30), function () use ($id) {

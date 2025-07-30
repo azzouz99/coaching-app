@@ -196,12 +196,6 @@
             </div>
         </main>
 
-        <footer class="bg-white border-t border-gray-200 mt-12">
-            <div class="container mx-auto px-4 md:px-6 py-6">
-                <div class="text-center">
-                    <p class="text-sm text-gray-600">© {{ date('Y') }} CETMI. Tous droits réservés.</p>
-                </div>
-            </div>
-        </footer>
+      @include('partials.footer')
     </body>
 </html>
