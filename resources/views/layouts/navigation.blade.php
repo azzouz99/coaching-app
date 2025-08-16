@@ -1,4 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -9,16 +10,20 @@
                         <img src="{{ asset('images/logo2.png')}}" alt="Logo" class="h-12 w-auto">
                     </a>
                 </div>
-
+                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                         {{ __('Accueil') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Tableau de bord') }}
                     </x-nav-link>
+                    <div class="flex items-center">
+                        <x-language-switcher />
+                    </div>
                 </div>
+                
             </div>
 
             <!-- Settings Dropdown -->
@@ -48,7 +53,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Se déconnecter') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -76,6 +81,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-language-switcher />
         </div>
 
         <!-- Responsive Settings Options -->

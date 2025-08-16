@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ $htmlLang ?? app()->getLocale() }}"
+      dir="{{ $htmlDir ?? (app()->getLocale()==='ar' ? 'rtl' : 'ltr') }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,20 +17,20 @@
     <section class="bg-gradient-to-b from-green-100 to-white py-24 text-center shadow-md shadow-green-800">
         <div class="max-w-5xl mx-auto px-6">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 text-black drop-shadow-2xl animate-fade-in-up">
-                BIENVENUE
+                {{ __('BIENVENUE') }}
             </h1>
             <p class="text-xl md:text-2xl mb-4 text-gray-800 animate-fade-in-up animation-delay-300">
-                Centre d'études et de Recherches En Médecine Islamique
+                {{ __('Centre d\'Études et de Recherches en Médecine Islamique') }}
             </p>
             <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-700 leading-relaxed animate-fade-in-up animation-delay-600">
-                Découvrez une approche holistique de la santé qui unit corps et esprit selon les principes de la médecine islamique
+                {{ __('Découvrez une approche holistique de la santé qui unit corps et esprit selon les principes de la médecine islamique') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10 animate-fade-in-up animation-delay-900">
                 <a href="{{ route('register') }}" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-                    Commencer maintenant
+                    {{ __('Commencer maintenant') }}
                 </a>
                 <a href="#mission" class="bg-white/20 hover:bg-white/30 text-green-600 border border-green-600 px-8 py-4 rounded-lg text-lg font-semibold backdrop-blur-sm hover:backdrop-blur-md transition-all duration-300">
-                    En savoir plus
+                    {{ __('En savoir plus') }}
                 </a>
             </div>
         </div>
@@ -64,18 +65,18 @@
                             <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl shadow-sm">
                                 <h2 class="text-lg font-bold text-green-700 mb-3 flex items-center">
                                     <span class="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                                    Notre objectif ultime
+                                    {{ __('Notre objectif ultime') }}
                                 </h2>
-                                <p class="text-gray-600 text-sm leading-relaxed">Devenir la destination santé la plus fiable en mettant l'accent sur le concept holistique de la médecine islamique, qui prend soin du corps et de l'esprit.</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">{{ __('Devenir la destination santé la plus fiable en mettant l\'accent sur le concept holistique de la médecine islamique, qui prend soin du corps et de l\'esprit.') }}</p>
                             </div>
                             
                             <!-- Notre mission -->
                             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl shadow-sm">
                                 <h2 class="text-lg font-bold text-blue-700 mb-3 flex items-center">
                                     <span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-                                    Notre mission
+                                    {{ __('Notre mission') }}
                                 </h2>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-3">Créer un modèle de soins de santé intégrant une perspective islamique holistique pour soigner le corps et l'esprit humains, en adhérant aux meilleures normes médicales internationales et en suivant les principes divins de traitement et d'éthique.</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ __('Créer un modèle de soins de santé intégrant une perspective islamique holistique pour soigner le corps et l\'esprit humains, en adhérant aux meilleures normes médicales internationales et en suivant les principes divins de traitement et d\'éthique.') }}</p>
                                 <p class="text-gray-600 font-arabic text-right text-base bg-white/50 p-3 rounded-lg">( واقتفاء المعايير الربانية في المعاملة والأخلاق)</p>
                             </div>
                             
@@ -83,10 +84,10 @@
                             <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl shadow-sm">
                                 <h2 class="text-lg font-bold text-purple-700 mb-3 flex items-center">
                                     <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
-                                    Notre approche
+                                    {{ __('Notre approche') }}
                                 </h2>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-3">Cette formation est progressive, étape par étape, afin d'inculquer à l'étudiant des connaissances complètes pour mieux comprendre le patient, examiner ses antécédents et ajuster son équilibre.</p>
-                                <p class="text-gray-600 text-sm leading-relaxed mb-3">Al-Razi, en médecine et en traitement, a toujours recommandé de commencer par l'alimentation. Si le patient n'en tire aucun bénéfice, il doit recourir à des médicaments « Si un homme sage peut soigner avec de la nourriture sans médicament, il a atteint le bonheur. »</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ __('Cette formation est progressive, étape par étape, afin d\'inculquer à l\'étudiant des connaissances complètes pour mieux comprendre le patient, examiner ses antécédents et ajuster son équilibre.')}}</p>
+                                <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ __('Al-Razi, en médecine et en traitement, a toujours recommandé de commencer par l\'alimentation. Si le patient n\'en tire aucun bénéfice, il doit recourir à des médicaments « Si un homme sage peut soigner avec de la nourriture sans médicament, il a atteint le bonheur. »')}}</p>
                                 <p class="text-gray-600 font-arabic text-right text-base bg-white/50 p-3 rounded-lg">إن استطاع الحكيم أن يعالج بالأغذية دون الأدوية فقد وافق السعادة</p>
                             </div>
                             
@@ -94,9 +95,9 @@
                             <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl shadow-sm">
                                 <h2 class="text-lg font-bold text-amber-700 mb-3 flex items-center">
                                     <span class="w-2 h-2 bg-amber-600 rounded-full mr-3"></span>
-                                    Le rôle du centre
+                                    {{ __('Le rôle du centre') }}
                                 </h2>
-                                <p class="text-gray-600 text-sm leading-relaxed">Encourager le travail d'équipe et organiser les soins de santé</p>
+                                <p class="text-gray-600 text-sm leading-relaxed">{{ __('Encourager le travail d\'équipe et organiser les soins de santé')}}</p>
                             </div>
                         </div>
                     </div>
@@ -111,7 +112,7 @@
 
                     <!-- Photo Menu -->
                     <div class="bg-white shadow-md rounded-lg p-6">
-                        <h2 class="text-xl font-semibold mb-4 text-green-600">Menu Photos</h2>
+                        <h2 class="text-xl font-semibold mb-4 text-green-600">{{ __('Menu Photos') }}</h2>
                         <div class="grid grid-cols-2 gap-4">
                             <!-- Replace with your actual menu photos -->
                             <div class="aspect-square bg-gray-100 rounded-md flex items-center justify-center">
@@ -159,9 +160,9 @@
                 <!-- Right Column: Coaches Display -->
                 <div class="md:w-2/3 order-1 md:order-2">
                     <div class="flex justify-between items-center mb-8">
-                    <h1 class="text-3xl font-bold mb-8 text-green-600">Nos Intervenants</h1>
+                    <h1 class="text-3xl font-bold mb-8 text-green-600">{{ __('Nos Intervenants') }}</h1>
                             <a href="{{ route('dashboard') }}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300">
-                                Voir tous →
+                                {{ __('Voir tous') }} →
                             </a>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -180,7 +181,7 @@
                                 </div>
                                 <!-- Coach Details -->
                                 <div class="flex-1">
-                                    <h3 class="text-lg font-semibold">{{ $coach->name }}</h3>
+                                    <h3 class="text-lg font-semibold">{{ __($coach->name) }}</h3>
                                     @if($coach->specialties)
                                     <div class="flex flex-wrap gap-1 my-1">
                                         @foreach($coach->specialties as $specialty)
@@ -190,7 +191,7 @@
                                     @endif
                                     <p class="text-sm text-gray-600 mt-1 line-clamp-3">{{ $coach->description }}</p>
                                     <a href="{{ route('coach.show', $coach) }}" class="inline-block mt-2 text-sm font-medium text-green-600 hover:text-green-700">
-                                        En savoir plus →
+                                        {{ __('En savoir plus') }} →
                                     </a>
                                 </div>
                             </div>

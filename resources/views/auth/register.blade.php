@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <h2 class="text-2xl font-bold text-green-600 mb-6 text-center">Créer un compte</h2>
+    <h2 class="text-2xl font-bold text-green-600 mb-6 text-center">{{__('Créer un compte')}}</h2>
     
     <form method="POST" action="{{ route('register') }}">
         @csrf

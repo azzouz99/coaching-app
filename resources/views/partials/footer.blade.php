@@ -3,54 +3,60 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <!-- Logo & About -->
             <div class="col-span-1 md:col-span-1">
-                <div class="flex items-center mb-4">
-                    <img src="{{ asset('images/logo2.png') }}" alt="CERMI Logo" class="h-12 w-auto mr-2">
-                    <div>
+                <div class="flex items-center mb-4 rtl:space-x-reverse space-x-2">
+                    <img src="{{ asset('images/logo2.png') }}" alt="CERMI Logo" class="h-12 w-auto">
+                    <div class="rtl:text-right">
                         <h3 class="text-lg font-semibold text-gray-900">CERMI</h3>
-                        <p class="text-xs text-gray-600">Centre d'Études et de Recherches en Médecine Islamique</p>
+                        <p class="text-xs text-gray-600">
+                            {{ __('Centre d\'Études et de Recherches en Médecine Islamique') }}
+                        </p>
                     </div>
                 </div>
-                <p class="text-gray-600 text-sm mb-4">Plateforme de formation et de partage de connaissances dans le domaine de la médecine islamique.</p>
+                <p class="text-gray-600 text-sm mb-4 rtl:text-right">
+                    {{ __('Plateforme de formation et de partage de connaissances dans le domaine de la médecine islamique') }}.
+                </p>
             </div>
 
             <!-- Links Column 1 -->
-            <div class="col-span-1">
-                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Navigation</h3>
+            <div class="col-span-1 rtl:text-right">
+                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">{{ __('Navigation')}}</h3>
                 <ul class="space-y-2">
-                    <li><a href="{{ route('welcome') }}" class="text-gray-600 hover:text-green-600 transition-colors text-sm">Accueil</a></li>
-                    <li><a href="{{ route('dashboard') }}" class="text-gray-600 hover:text-green-600 transition-colors text-sm">Tableau de bord</a></li>
-                    <li><a href="{{ route('profile.edit') }}" class="text-gray-600 hover:text-green-600 transition-colors text-sm">Mon profil</a></li>
+                    <li><a href="{{ route('welcome') }}" class="text-gray-600 hover:text-green-600 transition-colors text-sm">{{ __('Accueil')}}</a></li>
+                    <li><a href="{{ route('dashboard') }}" class="text-gray-600 hover:text-green-600 transition-colors text-sm">{{ __('Tableau de bord')}}</a></li>
+                    <li><a href="{{ route('profile.edit') }}" class="text-gray-600 hover:text-green-600 transition-colors text-sm">{{ __('Mon profil')}}</a></li>
                 </ul>
             </div>
 
             <!-- Links Column 2 -->
-            <div class="col-span-1">
-                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Ressources</h3>
+            <div class="col-span-1 rtl:text-right">
+                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">{{ __('Ressources')}}</h3>
                 <ul class="space-y-2">
-                    <li><a href="#" class="text-gray-600 hover:text-green-600 transition-colors text-sm">Nos formations</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-green-600 transition-colors text-sm">Nos intervenants</a></li>
-                    <li><a href="#" class="text-gray-600 hover:text-green-600 transition-colors text-sm">Publications</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-green-600 transition-colors text-sm">{{ __('Nos formations')}}</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-green-600 transition-colors text-sm">{{ __('Nos intervenants')}}</a></li>
+                    <li><a href="#" class="text-gray-600 hover:text-green-600 transition-colors text-sm">{{ __('Publications')}}</a></li>
                 </ul>
             </div>
 
             <!-- Contact -->
-            <div class="col-span-1">
-                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Contact</h3>
+            <div class="col-span-1 rtl:text-right">
+                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">{{ __('Contact') }}</h3>
                 <ul class="space-y-2">
-                    <li class="flex items-start">
-                        <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li class="flex items-start rtl:space-x-reverse space-x-2">
+                        <svg class="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <span class="text-gray-600 text-sm">support@cermislamique.com</span>
                     </li>
-                    <li class="flex items-start">
-                        <svg class="h-5 w-5 text-green-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <li class="flex items-start rtl:space-x-reverse space-x-2">
+                        <svg class="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                         <span class="text-gray-600 text-sm">+216 (98) 939-834</span>
                     </li>
                 </ul>
-                <div class="mt-4 flex space-x-4">
+
+                <!-- Social icons -->
+                <div class="mt-4 rtl:space-x-reverse flex space-x-4">
                     <a href="#" class="text-gray-400 hover:text-green-600 transition-colors">
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
@@ -69,10 +75,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- Bottom -->
         <div class="mt-8 pt-8 border-t border-gray-200">
-            <div class="flex flex-col md:flex-row justify-center items-center">
-                <p class="text-gray-500 text-sm">&copy; {{ date('Y') }} CERMI. Tous droits réservés.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center rtl:text-right">
+                <p class="text-gray-500 text-sm">&copy; {{ date('Y') }} CERMI. {{ __('Tous droits réservés.') }}</p>
             </div>
-        </div>            
+        </div>
     </div>
 </footer>

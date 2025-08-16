@@ -63,7 +63,12 @@ Route::middleware('auth')->group(function () {
         [SubscriptionController::class, 'trialSuccess'])
         ->name('subscription.trial.success');
 });
-
+Route::get('/locale/{locale}', function ($locale) {
+    $available = config('app.available_locales', ['ar','fr']);
+    abort_unless(in_array($locale, $available), 404);
+    session(['locale' => $locale]);
+    return back();
+})->name('locale.switch');
 // Profile routes (only auth required)
 Route::middleware('auth')->group(function () {
     Route::get('/profile',   [ProfileController::class, 'edit'])->name('profile.edit');

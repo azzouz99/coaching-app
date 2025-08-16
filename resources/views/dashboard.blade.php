@@ -17,8 +17,8 @@
                         </svg>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold text-gray-900">Bonjour {{ auth()->user()->name ?? 'Utilisateur' }} ! 👋</h3>
-                        <p class="text-gray-600">Découvrez nos Intervenants experts et commencez votre parcours de développement personnel.</p>
+                        <h3 class="text-xl font-bold text-gray-900">{{ __('Bonjour') }} {{ auth()->user()->name ?? 'Utilisateur' }} ! 👋</h3>
+                        <p class="text-gray-600">{{ __('Découvrez nos Intervenants experts et commencez votre parcours de développement personnel')}}.</p>
                     </div>
                 </div>
             </div>

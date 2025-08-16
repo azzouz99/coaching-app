@@ -1,6 +1,6 @@
 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
-        <h3 class="text-2xl font-bold text-gray-900">Nos Intervenants Experts</h3>
+        <h3 class="text-2xl font-bold text-gray-900">{{ __('Nos Intervenants Experts') }}</h3>
         
         <!-- Search Input -->
         <div class="relative">
@@ -13,19 +13,19 @@
                 wire:model.live.debounce.300ms="search" 
                 type="text" 
                 class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                placeholder="Rechercher un coach..."
+                placeholder="{{__('Rechercher un intervenant...')}}"
             >
         </div>
     </div>
     
     <div class="flex items-center justify-between mb-6">
         <div class="flex items-center space-x-2">
-            <span class="text-sm text-gray-500">{{ $coaches->total() }} coachs disponibles</span>
+            <span class="text-sm text-gray-500">{{ $coaches->total() }} {{ __('intervenants disponibles') }}</span>
         </div>
         
         <!-- Results per page -->
         <div class="flex items-center space-x-2">
-            <label class="text-sm text-gray-500">Afficher:</label>
+            <label class="text-sm text-gray-500">{{ __('Afficher:') }}</label>
             <select wire:model.live="perPage" class="border border-gray-300 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                 <option value="6">6</option>
                 <option value="9">9</option>
@@ -54,7 +54,7 @@
                         @endif
                         <div class="absolute top-3 right-3">
                             <span class="bg-white/90 backdrop-blur-sm text-gray-700 px-3 py-1.5 rounded-full text-sm font-medium">
-                                Intervenant
+                                {{ __('Intervenant') }}
                             </span>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <div class="p-6 flex-1 flex flex-col">
                         <div class="flex-1">
                             <div class="flex items-center justify-between mb-3">
-                                <h4 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{{ $coach->name }}</h4>
+                                <h4 class="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{{ __($coach->name) }}</h4>
                                 <div class="flex items-center">
                                     <div class="w-2 h-2 bg-green-400 rounded-full mr-1"></div>
                                     <span class="text-xs text-gray-500">Actif</span>
@@ -71,12 +71,12 @@
                             </div>
                             
                             @if($coach->description)
-                                <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                                <p class="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3 truncate">
                                     {{ Str::limit($coach->description, 120) }}
                                 </p>
                             @else
                                 <p class="text-gray-400 text-sm italic mb-4">
-                                    Aucune description disponible
+                                    {{ __('Aucune description disponible') }}
                                 </p>
                             @endif
                         </div>
@@ -85,11 +85,11 @@
                         <div class="flex space-x-2 mt-auto">                                        
                             @if($coach->courses->count() > 0)
                                 <a href="{{ route('coach.show', $coach) }}" class="flex-1 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 text-sm text-center">
-                                    Voir les cours
+                                    {{ __('Voir les cours') }}
                                 </a>
                             @else
                                 <button class="flex-1 bg-gray-100 text-gray-400 font-medium py-3 px-4 rounded-lg text-sm cursor-not-allowed">
-                                    Pas de cours
+                                    {{ __('Pas de cours') }}
                                 </button>
                             @endif
                         </div>
@@ -112,25 +112,25 @@
             </div>
             <h3 class="text-xl font-medium text-gray-900 mb-2">
                 @if($search)
-                    Aucun coach trouvé pour "{{ $search }}"
+                    {{ __('Aucun coach trouvé pour') }} "{{ $search }}"
                 @else
-                    Aucun coach disponible
+                    {{ __('Aucun coach disponible') }}
                 @endif
             </h3>
             <p class="text-gray-600 mb-6">
                 @if($search)
-                    Essayez de modifier votre recherche ou parcourez tous les coachs.
+                    {{ __('Essayez de modifier votre recherche ou parcourez tous les coachs.') }}
                 @else
-                    Les coachs seront bientôt disponibles. Revenez plus tard !
+                    {{ __('Les coachs seront bientôt disponibles. Revenez plus tard !') }}
                 @endif
             </p>
             @if($search)
                 <button wire:click="$set('search', '')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                    Voir tous les coachs
+                    {{ __('Voir tous les coachs') }}
                 </button>
             @else
                 <button onclick="window.location.reload()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                    Actualiser la page
+                    {{ __('Actualiser la page') }}
                 </button>
             @endif
         </div>

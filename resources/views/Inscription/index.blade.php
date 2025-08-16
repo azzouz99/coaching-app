@@ -4,7 +4,7 @@
         <div class="container mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row items-center justify-between">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="text-gray-800">2ème congrès de CETMI</span> <span class="text-green-600">AMYGDALITE ET ASTHME</span></h1>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="text-gray-800">2ème congrès de CERMI</span> <span class="text-green-600">SINUSITE ET ASTHME</span></h1>
                     <p class="text-xl text-gray-600 mb-6">10-11 Octobre 2025 • Kairouan, Tunisie</p>
                     <p class="text-gray-600 mb-8">Profitez de moments privilégiés pour échanger avec des experts nationaux et internationaux .ne manquer pas cette opportunité unique de formation, d’échange et de mise à jour de vos connaissances en pathologie Orl et Pneumologie dans un contexte islamique.</p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
