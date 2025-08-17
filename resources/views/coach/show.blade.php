@@ -58,7 +58,7 @@
                     <div class="lg:col-span-2">
                         <h4 class="text-xl font-bold text-gray-900 mb-4">{{ __('À propos de cet intervenant') }}</h4>
                         @if($coach->description)
-                            <p class="text-gray-600 leading-relaxed mb-6">@nl2br($coach->description)</p>
+                            <p class="text-gray-600 leading-relaxed mb-6">@nl2br(__($coach->description))</p>
                         @else
                             <p class="text-gray-500 italic mb-6">{{ __('Aucune description disponible pour ce coach.') }}</p>
                         @endif

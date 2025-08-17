@@ -444,7 +444,7 @@
     <!-- CTA Section -->
     <section class="py-16 bg-gradient-to-r from-green-600 to-green-700 text-white">
         <div class="container mx-auto px-4 md:px-6 text-center">
-            <h2 class="text-3xl font-bold mb-6">Prêt à participer au 2ème congrès de CETMI amygdalite et asthme ?</h2>
+            <h2 class="text-3xl font-bold mb-6">Prêt à participer au 2ème congrès de CERMI amygdalite et asthme ?</h2>
             <p class="text-lg max-w-2xl mx-auto mb-8">Profitez de moments privilégiés pour échanger avec des experts nationaux et internationaux .ne manquer pas cette opportunité unique de formation, d’échange et de mise à jour de vos connaissances en pathologie Orl et Pneumologie dans un contexte islamique.</p>
             <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <a href="{{ url('/inscription/coach') }}" class="inline-block bg-white text-green-700 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors">Soumission des travaux scientifiques</a>
