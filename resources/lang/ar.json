@@ -93,6 +93,8 @@
     "Connexion" : "تسجيل الدخول",
     "Intervenant Expert" : "مستشار خبير",
     "Compléments alimentaires et obésité" : "المكملات الغذائية والسمنة",
+    "auth.failed" : "هذه البيانات غير متطابقة مع سجلاتنا.",
+    "auth.password" : "كلمة المرور المقدمة غير صحيحة.",
     "Obésité chez l'enfant en endobiogénie" : "السمنة لدى الأطفال في الإندوبيوجيني",
     "← Retour au tableau de bord" : "← العودة إلى لوحة التحكم",
     "Prévention du diabète type 2 dans un contexte islamique" : "الوقاية من مرض السكري من النوع 2 في سياق إسلامي",
