@@ -3,25 +3,25 @@
     </x-slot>
 
     <div class="py-8 bg-gray-50 min-h-screen">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- Welcome Banner -->
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-100 relative overflow-hidden animate-fade-in">
-                <!-- Background decoration -->
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-full -translate-y-16 translate-x-16 opacity-20"></div>
-                <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-purple-200 to-pink-300 rounded-full translate-y-12 -translate-x-12 opacity-20"></div>
-                
-                <div class="relative z-10 flex items-center space-x-4">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg animate-bounce-in">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">{{ __('Bonjour') }} {{ auth()->user()->name ?? 'Utilisateur' }} ! 👋</h3>
-                        <p class="text-gray-600">{{ __('Découvrez nos Intervenants experts et commencez votre parcours de développement personnel')}}.</p>
-                    </div>
-                </div>
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <!-- Welcome Banner -->
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-100 relative overflow-hidden animate-fade-in">
+        <!-- Background decoration - adjusted for RTL -->
+        <div class="absolute top-0 ltr:right-0 rtl:left-0 w-32 h-32 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-full -translate-y-16 ltr:translate-x-16 rtl:-translate-x-16 opacity-20"></div>
+        <div class="absolute bottom-0 ltr:left-0 rtl:right-0 w-24 h-24 bg-gradient-to-br from-purple-200 to-pink-300 rounded-full translate-y-12 ltr:-translate-x-12 rtl:translate-x-12 opacity-20"></div>
+        
+        <div class="relative z-10 flex items-center ltr:space-x-4 rtl:space-x-reverse">
+            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg animate-bounce-in">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
             </div>
+            <div class="rtl:text-right">
+                <h3 class="text-xl font-bold text-gray-900">{{ __('Bonjour') }} {{ auth()->user()->name ?? 'Utilisateur' }} ! 👋</h3>
+                <p class="text-gray-600">{{ __('Découvrez nos Intervenants experts et commencez votre parcours de développement personnel')}}.</p>
+            </div>
+        </div>
+    </div>
 
             <!-- Stats Cards Component -->
             <div class="mb-8 animate-slide-up">
