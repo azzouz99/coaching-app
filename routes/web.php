@@ -13,6 +13,8 @@ Route::get('/', fn() => view('welcome', [
     'coaches' => Coach::orderBy('id')->take(6)->get(),
 ]))->name('welcome');
 
+Route::view('/coming-soon', 'coming-soon')->name('coming-soon');
+
 Route::view('/inscription',          'Inscription.index')->name('inscription');
 Route::view('/inscription/coach',    'Inscription.components.coach-inscription')->name('inscription.coach');
 Route::view('/inscription/etudiant', 'Inscription.components.student-inscription')->name('inscription.etudiant');

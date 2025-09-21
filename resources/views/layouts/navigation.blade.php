@@ -17,7 +17,13 @@
                         {{ __('Accueil') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Tableau de bord') }}
+                        {{ __('Les Cours du Congrés') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('coming-soon')" :active="request()->routeIs('zaytouna')">
+                        {{ __('Enseignement Zaytouna') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
+                        {{ __('Espace étudiant 3ème nutrition') }}
                     </x-nav-link>
                     <div class="flex items-center">
                         <x-language-switcher />
@@ -79,13 +85,22 @@
                 {{ __('Accueil') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Tableau de bord') }}
+                {{ __('Les Cours du Congrés') }}
             </x-responsive-nav-link>
-            <x-language-switcher />
+            <x-responsive-nav-link :href="route('coming-soon')" :active="request()->routeIs('zaytouna')">
+                {{ __('Enseignement Zaytouna') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
+                {{ __('Espace étudiant 3ème nutrition') }}
+            </x-responsive-nav-link>
+            <div class="px-3 py-2">
+                <x-language-switcher />
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
+            @auth
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
@@ -99,7 +114,6 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
@@ -107,6 +121,16 @@
                     </x-responsive-nav-link>
                 </form>
             </div>
+            @else
+            <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('login')">
+                    {{ __('Se Connecter') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('register')">
+                    {{ __('Inscription') }}
+                </x-responsive-nav-link>
+            </div>
+            @endauth
         </div>
     </div>
 </nav>
