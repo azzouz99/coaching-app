@@ -44,8 +44,9 @@
                         class="w-full h-auto"
                         loop
                         controls
+                        poster="{{ asset('storage/thumbnails/cover.png') }}"
                     >
-                        <source src="{{ Storage::disk('s3')->temporaryUrl('intro.mp4', now()->addMinutes(60)) }}" type="video/mp4">
+                        <source src="{{ asset('storage/videos/intro.mp4') }}" }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
