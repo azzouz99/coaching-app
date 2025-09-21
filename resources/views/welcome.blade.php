@@ -77,7 +77,7 @@
                                     {{ __('Notre mission') }}
                                 </h2>
                                 <p class="text-gray-600 text-sm leading-relaxed mb-3">{{ __('Créer un modèle de soins de santé intégrant une perspective islamique holistique pour soigner le corps et l\'esprit humains, en adhérant aux meilleures normes médicales internationales et en suivant les principes divins de traitement et d\'éthique.') }}</p>
-                                <p class="text-gray-600 font-arabic text-right text-base bg-white/50 p-3 rounded-lg">( واقتفاء المعايير الربانية في المعاملة والأخلاق)</p>
+                                <p class="text-gray-600 font-arabic text-right text-base bg-white/50 p-3 rounded-lg">( واقتفاء المعايير الربانية في الأخلاق والمعاملة )</p>
                             </div>
                             
                             <!-- Notre approche -->
