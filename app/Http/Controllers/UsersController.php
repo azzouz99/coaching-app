@@ -22,29 +22,35 @@ public function index()
 
 public function edit(User $user)
 {
-    $permissions     = Permission::orderBy('name')->get(['name']);
-    $userPermissions = $user->getPermissionNames()->toArray();
-
     return view('users.edit', [
         'user'            => $user,
-        'permissions'     => $permissions,
-        'userPermissions' => $userPermissions,
+        'roles'           => Role::orderBy('name')->get(['name']),
+        'permissions'     => Permission::orderBy('name')->get(['name']),
+        'userRoles'       => $user->getRoleNames()->toArray(),
+        'userPermissions' => $user->getPermissionNames()->toArray(),
     ]);
 }
 
-public function update(Request $request, User $user)
+public function updateRoles(Request $request, User $user)
 {
-    // Only validate / update permissions
+    $data = $request->validate([
+        'roles'   => 'nullable|array',
+        'roles.*' => 'string|exists:roles,name',
+    ]);
+
+    $user->syncRoles($data['roles'] ?? []);
+    return back()->with('success', __('Rôles mis à jour.'));
+}
+
+public function updatePermissions(Request $request, User $user)
+{
     $data = $request->validate([
         'permissions'   => 'nullable|array',
         'permissions.*' => 'string|exists:permissions,name',
     ]);
 
-    $user->syncPermissions($data['permissions'] ?? []); // roles & identity untouched
-
-    return redirect()
-        ->route('users.edit', $user)
-        ->with('success', __('Permissions mises à jour.'));
+    $user->syncPermissions($data['permissions'] ?? []);
+    return back()->with('success', __('Permissions mises à jour.'));
 }
 
 

@@ -19,8 +19,11 @@ Route::view('/inscription',          'Inscription.index')->name('inscription');
 Route::view('/inscription/coach',    'Inscription.components.coach-inscription')->name('inscription.coach');
 Route::view('/inscription/etudiant', 'Inscription.components.student-inscription')->name('inscription.etudiant');
 Route::view('/inscription/about',    'Inscription.components.about-us')->name('inscription.about');
-Route::middleware(['auth','permission:users.manage'])->group(function () {
-    Route::resource('users', UsersController::class)->only(['index','edit','update']);
+Route::middleware(['auth','permission:users.manage|roles.manage'])->group(function () {
+    Route::get('users/{user}/edit', [UsersController::class, 'edit'])->name('users.edit');
+    Route::patch('users/{user}/roles', [UsersController::class, 'updateRoles'])->name('users.update-roles');
+    Route::patch('users/{user}/permissions', [UsersController::class, 'updatePermissions'])->name('users.update-permissions');
+    Route::get('users', [UsersController::class, 'index'])->name('users.index');
 });
 // Include Breeze’s auth routes (login/register/verification)
 require __DIR__.'/auth.php';

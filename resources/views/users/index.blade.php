@@ -12,12 +12,6 @@
              class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-colors">
             {{ __('← Retour au tableau de bord') }}
           </a>
-          @can('users.manage')
-            <a href="{{ route('users.create') }}"
-               class="bg-white text-green-800 px-4 py-2 rounded-lg font-semibold hover:bg-green-50 transition-colors">
-              {{ __('Nouveau') }}
-            </a>
-          @endcan
         </div>
       </div>
     </div>
