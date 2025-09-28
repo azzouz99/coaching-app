@@ -6,7 +6,7 @@ use App\Models\Coach;
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
-
+use App\Http\Controllers\UsersController;
 
 // Public pages
 Route::get('/', fn() => view('welcome', [
@@ -19,7 +19,9 @@ Route::view('/inscription',          'Inscription.index')->name('inscription');
 Route::view('/inscription/coach',    'Inscription.components.coach-inscription')->name('inscription.coach');
 Route::view('/inscription/etudiant', 'Inscription.components.student-inscription')->name('inscription.etudiant');
 Route::view('/inscription/about',    'Inscription.components.about-us')->name('inscription.about');
-
+Route::middleware(['auth','permission:users.manage'])->group(function () {
+    Route::resource('users', UsersController::class)->only(['index','edit','update']);
+});
 // Include Breeze’s auth routes (login/register/verification)
 require __DIR__.'/auth.php';
 

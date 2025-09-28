@@ -38,7 +38,7 @@ class RolesAndPermissionsSeeder extends Seeder
         }
 
         // Example: give first user admin
-        $user = \App\Models\User::first();
+        $user = \App\Models\User::where('email', 'benazzouzabderrahmen7@gmail.com')->first();
         if ($user && !$user->hasRole('admin')) $user->assignRole('admin');
 
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();

@@ -25,6 +25,11 @@
                     <x-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
                         {{ __('Espace étudiant 3ème nutrition') }}
                     </x-nav-link>
+                    @can('users.manage')
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                        {{ __('Utilisateurs') }}
+                    </x-nav-link>
+                    @endcan
                     <div class="flex items-center">
                         <x-language-switcher />
                     </div>
@@ -93,6 +98,11 @@
             <x-responsive-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
                 {{ __('Espace étudiant 3ème nutrition') }}
             </x-responsive-nav-link>
+            @can('users.manage')
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                {{ __('Utilisateurs') }}
+            </x-responsive-nav-link>
+            @endcan
             <div class="px-3 py-2">
                 <x-language-switcher />
             </div>
