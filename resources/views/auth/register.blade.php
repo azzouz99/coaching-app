@@ -6,7 +6,7 @@
 
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Nom')" class="text-gray-700 font-medium" />
+            <x-input-label for="name" :value="__('Nom Complet')" class="text-gray-700 font-medium" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -17,6 +17,11 @@
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
+        <!-- Diploma -->
+        <div class="mt-4">
+            <x-input-label for="diploma" :value="__('Diplôme / Profession')" class="text-gray-700 font-medium" />
+            <x-text-input id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" autocomplete="diploma" />
+            <x-input-error :messages="$errors->get('diploma')" class="mt-2" />  
 
         <!-- Password -->
         <div class="mt-4">
