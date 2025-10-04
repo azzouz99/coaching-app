@@ -29,7 +29,7 @@ Route::middleware(['auth','permission:users.manage|roles.manage'])->group(functi
 require __DIR__.'/auth.php';
 
 // Protected: must be authenticated, email-verified, and subscribed
-Route::middleware(['auth', 'verified', 'subscribed'])->group(function () {
+Route::middleware(['auth', 'verified', 'subscribed','role:congress'])->group(function () {
     Route::view('/dashboard',      'dashboard')->name('dashboard');
      Route::get('/coach/{coach}', function ($id) {
      $coach = Cache::remember("coach:$id", now()->addDays(30), function () use ($id) {
