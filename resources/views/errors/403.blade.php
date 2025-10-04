@@ -28,7 +28,7 @@
                     <div class="flex justify-center">
                         <a href="{{ url('/') }}"
                            class="inline-flex items-center px-5 py-2.5 rounded-lg bg-green-600 text-white hover:bg-green-700">
-                            <i class="fas fa-home mr-2"></i> {{ __('Retour à l’accueil') }}
+                            <i class="fas fa-home mr-2"></i> {{ __('Retour à l\'accueil') }}
                         </a>
                     </div>
                 </div>
