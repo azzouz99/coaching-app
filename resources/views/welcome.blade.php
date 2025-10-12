@@ -145,7 +145,7 @@
                         controls
                         poster="{{ asset('storage/thumbnails/intro0.png') }}"
                     >
-                        <source src="{{ asset('storage/videos/intro.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('storage/videos/intro0.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
