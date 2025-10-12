@@ -57,8 +57,6 @@ Route::middleware(['auth', 'verified', 'subscribed','role:congress','verified'])
 
 // Subscription checkout & process (only auth required)
 Route::middleware('auth')->group(function () {
-             Route::view('email/verify', 'auth.verify-email')
-         ->name('verification.notice');
     Route::get('/subscription/checkout', [SubscriptionController::class, 'checkout'])
          ->name('subscription.checkout');
     Route::get('/subscription/trial', [SubscriptionController::class, 'freeCheckout'])
