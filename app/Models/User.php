@@ -10,10 +10,10 @@ use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable  implements MustVerifyEmailContract
+class User extends Authenticatable  
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasRoles, MustVerifyEmail;
+    use HasFactory, Notifiable, HasRoles;
     
 
     /**

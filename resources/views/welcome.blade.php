@@ -37,7 +37,7 @@
     </section>
 
         <!-- Video Section -->
-        {{-- <section class="py-12 bg-gray-50">
+        <section class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-300 border border-gray-200">
                     <video 
@@ -51,7 +51,7 @@
                     </video>
                 </div>
             </div>
-        </section> --}}
+        </section>
 
 
 
@@ -136,7 +136,21 @@
       </div>
     </div>
   </div>
-            
+                    <section class="py-12 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-300 border border-gray-200">
+                    <video 
+                        class="w-full h-auto"
+                        loop
+                        controls
+                       
+                    >
+                        <source src="{{ asset('storage/videos/intro0.mp4') }}" }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Left Column: Programme overview -->
                 <div class="lg:w-1/3 space-y-8 order-2 lg:order-1">
