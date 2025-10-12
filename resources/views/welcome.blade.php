@@ -46,7 +46,7 @@
                         controls
                         poster="{{ asset('storage/thumbnails/cover.png') }}"
                     >
-                        <source src="{{ asset('storage/videos/intro.mp4') }}" }}" type="video/mp4">
+                        <source src="{{ asset('storage/videos/intro.mp4') }}"  type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -143,9 +143,9 @@
                         class="w-full h-auto"
                         loop
                         controls
-                       
+                        poster="{{ asset('storage/thumbnails/intro0.png') }}"
                     >
-                        <source src="{{ asset('storage/videos/intro0.mp4') }}" }}" type="video/mp4">
+                        <source src="{{ asset('storage/videos/intro.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
