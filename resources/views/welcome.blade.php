@@ -122,7 +122,7 @@
         <p>{{ __('Le début des cours, si Dieu le veut, aura lieu le dimanche 19 octobre 2025 à 9h00 (heure de Tunis).') }}</p>
         <p>{{ __('Nous entamerons, avec la bénédiction d’Allah, la série de médecine islamique en collaboration avec l’École Zaytounia de Médecine Islamique.') }}</p>
         <p>{{ __('Le lien d’accès à la plateforme d’enseignement en ligne vous sera envoyé par e-mail, à l’adresse utilisée lors de votre inscription.') }}</p>
-        <p>{{ __('Le livret des cours ainsi que les vidéos enregistrées des conférences seront envoyés par courrier à tous les inscrits.') }}</p>
+        <p>{{ __('Le livret des cours sera envoyé par courrier à tous les inscrits.') }}</p>
         <p>{{ __('Chaque semaine, une nouvelle conférence en vidéo sera disponible via Zoom, suivie d’une évaluation périodique pour chaque spécialité.') }}</p>
         <p>{{ __('À la fin de chaque semaine, une séance interactive de questions-réponses sur les leçons sera ouverte, si Dieu le veut.') }}</p>
         <p class="text-green-700 font-semibold text-center">
