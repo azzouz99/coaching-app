@@ -138,18 +138,7 @@
   </div>
                     <section class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4">
-                <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-300 border border-gray-200">
-                    <video 
-                        class="w-full h-auto"
-                        loop
-                        controls
-                        poster="{{ asset('storage/thumbnails/intro0.png') }}"
-                    >
-                        <source src="{{ asset('storage/videos/intro0.mp4') }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
+<div style="position:relative;padding-top:56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/510886/e74a18c3-c82a-4a0f-b150-f8186d1137b0?autoplay=true&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe></div>
         </section>
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Left Column: Programme overview -->
