@@ -14,7 +14,7 @@
             </h1>
             @if($course->coach)
                 <p class="mt-2 text-lg text-green-600 font-medium">
-                    {{ __('Enseignant :name', ['name' => __($course->coach->name)]) }}
+                    {{ __('Docteur :name', ['name' => __($course->coach->name)]) }}
                 </p>
             @endif
             @if($course->description)
@@ -27,32 +27,16 @@
 
     <div class="bg-gray-50 py-16">
         <div class="max-w-6xl mx-auto px-6 space-y-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white border border-green-100 rounded-2xl shadow-sm p-6 text-center">
-                    <span class="text-sm text-gray-500 uppercase tracking-widest">{{ __('Lecons totales') }}</span>
-                    <p class="mt-2 text-3xl font-extrabold text-green-600">{{ $lessonsCount }}</p>
-                </div>
-                <div class="bg-white border border-green-100 rounded-2xl shadow-sm p-6 text-center">
-                    <span class="text-sm text-gray-500 uppercase tracking-widest">{{ __('Progression') }}</span>
-                    <p class="mt-2 text-3xl font-extrabold text-green-600">
-                        {{ number_format(($lessonsCount > 0 ? ($currentLessonIndex / $lessonsCount) * 100 : 0), 0) }}%
-                    </p>
-                </div>
-                <div class="bg-white border border-green-100 rounded-2xl shadow-sm p-6 text-center">
-                    <span class="text-sm text-gray-500 uppercase tracking-widest">{{ __('Type de contenu') }}</span>
-                    <p class="mt-2 text-lg font-semibold text-gray-900">{{ __('Video Bunny Stream') }}</p>
-                </div>
-            </div>
 
             <section id="video" class="bg-white rounded-3xl shadow-lg border border-green-100 overflow-hidden">
                 <div class="bg-gradient-to-r from-green-50 to-emerald-50 px-8 py-6 border-b border-green-100">
                     <h2 class="text-2xl font-semibold text-gray-900 flex items-center justify-between">
                         <span>{{ __('Seance video') }}</span>
                         <span class="text-sm font-medium text-green-600 bg-white px-3 py-1 rounded-full border border-green-200">
-                            {{ __('Lecture securisee Bunny') }}
+                            {{ __('Lecture securisee') }}
                         </span>
                     </h2>
-                    <p class="mt-2 text-gray-600">{{ __('Visionnez votre lecon directement depuis notre bibliotheque securisee Bunny Stream.') }}</p>
+                    <p class="mt-2 text-gray-600">{{ __('Visionnez votre lecon directement depuis notre bibliotheque securisee.') }}</p>
                 </div>
                 <div class="aspect-video bg-black">
                     @if($videoSrc)

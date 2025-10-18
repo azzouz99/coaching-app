@@ -20,9 +20,9 @@
             <h1 class="mt-6 text-4xl md:text-6xl font-bold text-gray-900 drop-shadow-xl">
                 {{ __('Enseignement Zaytouna') }}
             </h1>
-            <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            {{-- <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                 {{ __("Un parcours immersif inspire de la tradition Zaytounienne, melant savoir, spiritualite et excellence academique.") }}
-            </p>
+            </p> --}}
 
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 @if(auth()->user()?->hasRole('admin'))
@@ -34,11 +34,11 @@
                         {{ __('Ajouter une lecon') }}
                     </a>
                 @endif
-                <div class="bg-white rounded-2xl shadow-xl border border-green-100 px-6 py-4 flex items-center space-x-4">
+                <div class="bg-white rounded-2xl shadow-xl border border-green-100 px-6 py-4 flex items-center ltr:space-x-4 rtl:space-x-reverse">
                     <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white text-xl font-semibold">
                         {{ $lessonsCount }}
                     </div>
-                    <div class="text-left">
+                    <div class="ltr:text-left rtl:text-right">
                         <p class="text-sm text-gray-500 uppercase tracking-wide">{{ __('Lecons disponibles') }}</p>
                         <p class="text-lg font-semibold text-gray-900">{{ __('Programme complet') }}</p>
                     </div>
