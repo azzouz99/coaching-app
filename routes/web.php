@@ -57,14 +57,16 @@ Route::middleware(['auth', 'verified', 'subscribed','role:congress','verified'])
 });
 
 Route::middleware(['auth', 'verified'])->prefix('zaytouna')->name('zaytouna.')->group(function () {
-    Route::middleware('role:zaytouna|admin')->group(function () {
-        Route::get('/', [ZaytounaCourseController::class, 'index'])->name('index');
-        Route::get('/lessons/{course}', [ZaytounaCourseController::class, 'show'])->name('show');
-    });
-
     Route::middleware('role:admin')->group(function () {
         Route::get('/lessons/create', [ZaytounaCourseController::class, 'create'])->name('create');
         Route::post('/lessons', [ZaytounaCourseController::class, 'store'])->name('store');
+    });
+
+    Route::middleware('role:zaytouna|admin')->group(function () {
+        Route::get('/', [ZaytounaCourseController::class, 'index'])->name('index');
+        Route::get('/lessons/{course}', [ZaytounaCourseController::class, 'show'])
+            ->whereNumber('course')
+            ->name('show');
     });
 });
 
