@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
             return redirect()->intended(route('dashboard', absolute: false));
         }
         if (Auth::user()->hasRole('zaytouna')) {
-            return redirect()->intended(route('coming-soon', absolute: false));
+            return redirect()->intended(route('zaytouna.index', absolute: false));
         }
         if (Auth::user()->hasRole('student')) {
             return redirect()->intended(route('coming-soon', absolute: false));

@@ -22,7 +22,7 @@
                         </x-nav-link>
                     @endif
                     @if (Auth::user()->hasRole('zaytouna'))
-                        <x-nav-link :href="route('coming-soon')" :active="request()->routeIs('zaytouna')">
+                        <x-nav-link :href="route('zaytouna.index')" :active="request()->routeIs('zaytouna.*')">
                             {{ __('Enseignement Zaytouna') }}
                         </x-nav-link>
                     @endif
@@ -104,7 +104,7 @@
             </x-responsive-nav-link>
             @endif
             @if (Auth::user()->hasRole('zaytouna'))
-            <x-responsive-nav-link :href="route('coming-soon')" :active="request()->routeIs('zaytouna')">
+            <x-responsive-nav-link :href="route('zaytouna.index')" :active="request()->routeIs('zaytouna.*')">
                 {{ __('Enseignement Zaytouna') }}
             </x-responsive-nav-link>
             @endif

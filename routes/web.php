@@ -2,11 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ZaytounaCourseController;
 use App\Models\Coach;
 use App\Models\Course;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Cache;
-use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Route;
 
 // Public pages
 Route::get('/', fn() => view('welcome', [
@@ -53,6 +54,18 @@ Route::middleware(['auth', 'verified', 'subscribed','role:congress','verified'])
      return view('course.show', compact('course'));
      })->name('course.show');
 
+});
+
+Route::middleware(['auth', 'verified'])->prefix('zaytouna')->name('zaytouna.')->group(function () {
+    Route::middleware('role:zaytouna|admin')->group(function () {
+        Route::get('/', [ZaytounaCourseController::class, 'index'])->name('index');
+        Route::get('/lessons/{course}', [ZaytounaCourseController::class, 'show'])->name('show');
+    });
+
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/lessons/create', [ZaytounaCourseController::class, 'create'])->name('create');
+        Route::post('/lessons', [ZaytounaCourseController::class, 'store'])->name('store');
+    });
 });
 
 // Subscription checkout & process (only auth required)
