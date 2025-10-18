@@ -15,7 +15,7 @@
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
             @auth
-                <a href="{{ route('dashboard') }}"
+                <a href="{{ route('zaytouna.index') }}"
                 class="px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-black hover:bg-green-600 hover:text-white transition">
                     {{ __('Tableau de bord') }}
                 </a>
@@ -54,7 +54,7 @@
     <div class="md:hidden" x-show="open" x-transition>
         <div class="px-4 pt-2 pb-3 space-y-1">
             @auth
-            <a href="{{ route('dashboard') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">{{ __('Tableau de bord') }}</a>
+            <a href="{{ route('zaytouna.index') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">{{ __('Tableau de bord') }}</a>
             <form method="POST" action="{{ route('logout') }}" class="inline">
                 @csrf
                 <button type="submit" class="w-full px-3 py-2 text-base font-medium text-green-600 hover:text-green-800 rtl:text-right text-start">

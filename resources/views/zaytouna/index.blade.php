@@ -8,7 +8,7 @@
         <div class="relative max-w-6xl mx-auto px-6 text-center">
             @if(session('status'))
                 <div class="mb-6 inline-flex items-center px-4 py-2 rounded-xl border border-green-300 bg-white/80 text-green-700 shadow">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 ltr:mr-2 rtl:ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>{{ session('status') }}</span>
@@ -28,17 +28,17 @@
                 @if(auth()->user()?->hasRole('admin'))
                     <a href="{{ route('zaytouna.create') }}"
                        class="inline-flex items-center px-6 py-3 bg-white text-green-700 font-semibold rounded-xl border border-green-200 shadow hover:bg-green-50 hover:border-green-300 transition-colors">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 ltr:mr-2 rtl:ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                         </svg>
                         {{ __('Ajouter une lecon') }}
                     </a>
                 @endif
-                <div class="bg-white rounded-2xl shadow-xl border border-green-100 px-6 py-4 flex items-center ltr:space-x-4 rtl:space-x-reverse">
-                    <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white text-xl font-semibold">
+                <div class="bg-white rounded-2xl shadow-xl border border-green-100 px-6 py-4 flex items-center" dir="{{ app()->getLocale()==='ar' ? 'rtl' : 'ltr' }}">
+                    <div class="shrink-0 w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white text-xl font-semibold">
                         {{ $lessonsCount }}
                     </div>
-                    <div class="ltr:text-left rtl:text-right">
+                    <div class="flex-1 mx-4">
                         <p class="text-sm text-gray-500 uppercase tracking-wide">{{ __('Lecons disponibles') }}</p>
                         <p class="text-lg font-semibold text-gray-900">{{ __('Programme complet') }}</p>
                     </div>
@@ -86,13 +86,13 @@
                                     </p>
                                 @endif
                                 <div class="flex items-center justify-between pt-4">
-                                    <div class="text-sm text-gray-500">
+                                    <div class="text-sm text-gray-500 ltr:text-left rtl:text-right">
                                         {{ __('Acceder a la video') }}
                                     </div>
                                     <a href="{{ route('zaytouna.show', $course) }}"
                                        class="inline-flex items-center px-4 py-2 rounded-lg bg-green-600 text-white text-sm font-semibold shadow-sm hover:bg-green-700 transition-colors">
                                         {{ __('Voir la lecon') }}
-                                        <svg class="w-4 h-4 ms-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg class="w-4 h-4 ltr:ml-2 rtl:mr-2 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                         </svg>
                                     </a>

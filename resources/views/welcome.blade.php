@@ -361,6 +361,7 @@
             </div>
             
             <!-- Call-to-action Section -->
+            @if (!Auth::user())   
             <div class="mt-20 py-12 bg-gradient-to-r from-green-50 via-white to-green-50 rounded-2xl border border-green-100">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">{{ __('Prêt à commencer votre voyage ?') }}</h3>
@@ -373,6 +374,7 @@
                     </a>
                 </div>
             </div>
+            @endif
         </main>
 
         @include('partials.footer')
