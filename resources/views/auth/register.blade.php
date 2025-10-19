@@ -20,7 +20,7 @@
         <!-- Diploma -->
         <div class="mt-4">
             <x-input-label for="diploma" :value="__('Diplôme / Profession')" class="text-gray-700 font-medium" />
-            <x-text-input id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" autocomplete="diploma" />
+            <x-text-input id="diploma" class="block mt-1 w-full" type="text" name="diploma" :value="old('diploma')" required autocomplete="diploma" />
             <x-input-error :messages="$errors->get('diploma')" class="mt-2" />  
 
         <!-- Password -->
