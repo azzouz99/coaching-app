@@ -49,10 +49,20 @@ class User extends Authenticatable  implements MustVerifyEmailContract
             'password' => 'hashed',
         ];
     }
-    
-        public function subscription()
+
+    public function subscription()
     {
         return $this->hasOne(Subscription::class);
+    }
+
+    public function meetings()
+    {
+        return $this->belongsToMany(Meeting::class)->withTimestamps();
+    }
+
+    public function createdMeetings()
+    {
+        return $this->hasMany(Meeting::class, 'created_by');
     }
 
 

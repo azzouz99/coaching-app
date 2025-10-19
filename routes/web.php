@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\MeetingController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ZaytounaCourseController;
 use App\Models\Coach;
@@ -25,6 +26,10 @@ Route::middleware(['auth','permission:users.manage|roles.manage', 'verified'])->
     Route::patch('users/{user}/roles', [UsersController::class, 'updateRoles'])->name('users.update-roles');
     Route::patch('users/{user}/permissions', [UsersController::class, 'updatePermissions'])->name('users.update-permissions');
     Route::get('users', [UsersController::class, 'index'])->name('users.index');
+    Route::delete('users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
+    Route::get('meetings', [MeetingController::class, 'index'])->name('meetings.index');
+    Route::get('meetings/create', [MeetingController::class, 'create'])->name('meetings.create');
+    Route::post('meetings', [MeetingController::class, 'store'])->name('meetings.store');
 });
 // Include Breeze’s auth routes (login/register/verification)
 require __DIR__.'/auth.php';

@@ -30,6 +30,18 @@
           </button>
         </form>
 
+        @if(session('success'))
+          <div class="mb-4 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-green-800">
+            {{ session('success') }}
+          </div>
+        @endif
+
+        @if(session('error'))
+          <div class="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-red-700">
+            {{ session('error') }}
+          </div>
+        @endif
+
         {{-- Table --}}
         <div class="overflow-x-auto">
           <table class="min-w-full divide-y divide-gray-200">
@@ -40,6 +52,9 @@
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                   {{ __('Email') }}
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                  {{ __('Email vérifié') }}
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                   {{ __('Diplôme') }}
@@ -57,6 +72,9 @@
                 <tr class="hover:bg-green-50/60">
                   <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{{ $user->name }}</td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->email }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-700">
+                    {{ $user->hasVerifiedEmail() ? __('Vérifié') : __('Non vérifié') }}
+                  </td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->diplome ?? '—' }}</td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">
                     @php $roles = method_exists($user, 'getRoleNames') ? $user->getRoleNames()->toArray() : []; @endphp
@@ -73,17 +91,30 @@
                     @endif
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-right">
-                    @canany(['users.manage','roles.manage'])
-                      <a href="{{ route('users.edit', $user) }}"
-                         class="inline-flex items-center px-3 py-2 rounded-lg bg-white border border-gray-300 hover:border-green-600 hover:text-green-700 shadow-sm">
-                        {{ __('Gérer rôles & permissions') }}
-                      </a>
-                    @endcanany
+                    <div class="flex items-center justify-end gap-2">
+                      @canany(['users.manage','roles.manage'])
+                        <a href="{{ route('users.edit', $user) }}"
+                           class="inline-flex items-center px-3 py-2 rounded-lg bg-white border border-gray-300 hover:border-green-600 hover:text-green-700 shadow-sm">
+                          {{ __('Modifier') }}
+                        </a>
+                      @endcanany
+                      @can('users.manage')
+                        <form method="POST" action="{{ route('users.destroy', $user) }}"
+                              onsubmit="return confirm('{{ __('Confirmer la suppression de cet utilisateur ?') }}');">
+                          @csrf
+                          @method('DELETE')
+                          <button type="submit"
+                                  class="inline-flex items-center px-3 py-2 rounded-lg bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 hover:border-red-300">
+                            {{ __('Supprimer') }}
+                          </button>
+                        </form>
+                      @endcan
+                    </div>
                   </td>
                 </tr>
               @empty
                 <tr>
-                  <td colspan="5" class="px-6 py-10 text-center text-gray-500">
+                  <td colspan="6" class="px-6 py-10 text-center text-gray-500">
                     {{ __('Aucun utilisateur trouvé') }}
                   </td>
                 </tr>

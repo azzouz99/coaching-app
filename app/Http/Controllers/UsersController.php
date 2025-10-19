@@ -53,5 +53,20 @@ public function updatePermissions(Request $request, User $user)
     return back()->with('success', __('Permissions mises à jour.'));
 }
 
+public function destroy(User $user)
+{
+    $currentUser = request()->user();
+
+    abort_unless($currentUser && $currentUser->can('users.manage'), 403);
+
+    if ($currentUser->id === $user->id) {
+        return back()->with('error', __('Vous ne pouvez pas supprimer votre propre compte.'));
+    }
+
+    $user->delete();
+
+    return redirect()->route('users.index')->with('success', __('Utilisateur supprimé.'));
+}
+
 
 }
