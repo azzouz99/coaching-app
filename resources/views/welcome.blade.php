@@ -119,7 +119,7 @@
 
       <!-- Corps du texte -->
       <div class="max-w-4xl mx-auto text-gray-700 text-base leading-relaxed space-y-5 text-justify bg-gradient-to-r from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-md">
-        <p>{{ __('Le début des cours, si Dieu le veut, aura lieu le dimanche 19 octobre 2025 à 9h00 (heure de Tunis).') }}</p>
+        <p>{{ __('Le début des cours, si Dieu le veut, aura lieu le dimanche 26 octobre 2025 à 20h00 (heure de Tunis).') }}</p>
         <p>{{ __('Nous entamerons, avec la bénédiction d’Allah, la série de médecine islamique en collaboration avec l’École Zaytounia de Médecine Islamique.') }}</p>
         <p>{{ __('Le lien d’accès à la plateforme d’enseignement en ligne vous sera envoyé par e-mail, à l’adresse utilisée lors de votre inscription.') }}</p>
         <p>{{ __('Le livret des cours sera envoyé par courrier à tous les inscrits.') }}</p>
@@ -172,7 +172,7 @@
 
                     <ul class="space-y-2 text-sm leading-relaxed">
                         <li>• <span class="font-medium text-green-700">{{ __('Volume :') }}</span> {{ __('16 heures (1h/semaine, à distance)') }}</li>
-                        <li>• <span class="font-medium text-green-700">{{ __('Calendrier :') }}</span> {{ __('à partir du dimanche 19 octobre 2025, sur 4 mois') }}</li>
+                        <li>• <span class="font-medium text-green-700">{{ __('Calendrier :') }}</span> {{ __('à partir du dimanche 26 octobre 2025, sur 4 mois') }}</li>
                         <li>• <span class="font-medium text-green-700">{{ __('Certification :') }}</span> {{ __('attestation délivrée après l’évaluation finale') }}</li>
                         <li>• <span class="font-medium text-green-700">{{ __('Structure :') }}</span> {{ __('16 modules · 16 semaines') }}</li>
                         <li>• <span class="font-medium text-green-700">{{ __('Encadrement :') }}</span> {{ __('3 experts (médecins/pharmaciens) + 2 collaborateurs') }}</li>
@@ -210,96 +210,96 @@
                     <!-- Séance 1 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 1 : Dimanche 26 octobre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 1 : Dimanche 26 octobre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span> {{ __('Science de la création : La cellule vivante et ses fonctions') }} — <span class="font-medium text-gray-600">{{ __('Dr. Yassine Malik') }}</span></li>
-                        <li><span class="text-green-700">09:30 </span> {{ __('Thérapie par l\'argile') }} — <span class="font-medium text-gray-600">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span> {{ __('Science de la création : La cellule vivante et ses fonctions') }} — <span class="font-medium text-gray-600">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span> {{ __('Thérapie par l\'argile') }} — <span class="font-medium text-gray-600">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 2 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 2 : Dimanche 2 novembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 2 : Dimanche 2 novembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Les nutriments') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
-                        <li><span class="text-green-700">09:30 </span>{{ __('Aliments et nutrition en Islam') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Les nutriments') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span>{{ __('Aliments et nutrition en Islam') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 3 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 3 : Dimanche 9 novembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 3 : Dimanche 9 novembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Sécurité alimentaire en Islam') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
-                        <li><span class="text-green-700">09:30 </span>{{ __('Aliments et nutrition en Islam') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Sécurité alimentaire en Islam') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span>{{ __('Aliments et nutrition en Islam') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 4 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 4 : Dimanche 16 novembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 4 : Dimanche 16 novembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Laitages et nutrition') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Laitages et nutrition') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 5 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 5 : Dimanche 23 novembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 5 : Dimanche 23 novembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Laits : vache, dromadaire, chèvre') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Laits : vache, dromadaire, chèvre') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 6 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 6 : Dimanche 30 novembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 6 : Dimanche 30 novembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Miel et dattes') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Miel et dattes') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 7 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 7 : Dimanche 7 décembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 7 : Dimanche 7 décembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:30 </span>{{ __('Blé et orge') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span>{{ __('Blé et orge') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 8 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 8 : Dimanche 14 décembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 8 : Dimanche 14 décembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Lipides & olives') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
-                        <li><span class="text-green-700">09:30 </span>{{ __('Lipides & beurre') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Lipides & olives') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span>{{ __('Lipides & beurre') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 9 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 9 : Dimanche 21 décembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 9 : Dimanche 21 décembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Lipides & samneh (beurre clarifié)') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
-                        <li><span class="text-green-700">09:30 </span>{{ __('Graisse de bélier arabe & sciatique') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Lipides & samneh (beurre clarifié)') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span>{{ __('Graisse de bélier arabe & sciatique') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 10 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 10 : Dimanche 28 décembre 2025 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 10 : Dimanche 28 décembre 2025 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Protéines et viandes') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
-                        <li><span class="text-green-700">09:30 </span>{{ __('Métabolisme & fonctions des nutriments') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Protéines et viandes') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:30 </span>{{ __('Métabolisme & fonctions des nutriments') }} — <span class="font-medium">{{ __('Dr. Yassine Malik') }}</span></li>
                         </ul>
                     </li>
 
@@ -307,16 +307,16 @@
                     <!-- Séance 11 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 11 : Dimanche 4 janvier 2026 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 11 : Dimanche 4 janvier 2026 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00</span>{{ __('Plantes aidant l\'organisme à résister au stress (ginseng)') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:00</span>{{ __('Plantes aidant l\'organisme à résister au stress (ginseng)') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
                         </ul>
                     </li>
 
                     <!-- Séance 12 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 12 : Dimanche 11 janvier 2026 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 12 : Dimanche 11 janvier 2026 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
                         <li>{{ __('Sédatifs nerveux à base de plantes : valériane, aubépine, rhodiole, passiflore…') }}</li>
                         </ul>
@@ -325,9 +325,9 @@
                     <!-- Séance 13 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 13 : Dimanche 18 janvier 2026 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 13 : Dimanche 18 janvier 2026 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
-                        <li><span class="text-green-700">09:00 </span>{{ __('Neuro-médiateurs des plantes') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
+                        <li><span class="text-green-700">20:00 </span>{{ __('Neuro-médiateurs des plantes') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
                         <li>{{ __('Plantes pour stimuler la mémoire et la concentration : ginkgo biloba, sauge, thé vert') }}</li>
                         </ul>
                     </li>
@@ -335,7 +335,7 @@
                     <!-- Séance 14 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 14 : Dimanche 25 janvier 2026 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 14 : Dimanche 25 janvier 2026 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
                         <li>{{ __('Prise en charge de fond du patient Alzheimer') }} — <span class="font-medium">{{ __('(Dr. pharmacien) Lotfi Guenaien') }}</span></li>
                         </ul>
@@ -344,14 +344,14 @@
                     <!-- Séance 15 -->
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 15 : Dimanche 1 février 2026 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 15 : Dimanche 1 février 2026 à 20:00') }}</h4>
                         <ul class="text-sm text-gray-700 mt-1 space-y-1">
                         <li>{{ __('Traitement de la migraine par les plantes') }}</li>
                         </ul>
                     </li>              
                     <li>
                         <div class="absolute -start-1.5 mt-1.5 w-3 h-3 rounded-full bg-green-600 ring-4 ring-green-100"></div>
-                        <h4 class="font-semibold text-gray-900">{{ __('Séance 16 : Dimanche 8 février 2026 à 09:00') }}</h4>
+                        <h4 class="font-semibold text-gray-900">{{ __('Séance 16 : Dimanche 8 février 2026 à 20:00') }}</h4>
                         <p class="text-sm text-gray-700 mt-1">{{ __('Épreuve d\'évaluation (test final)') }}</p>
                     </li>
                     </ol>
