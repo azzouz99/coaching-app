@@ -8,11 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 use Illuminate\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable 
+class User extends Authenticatable  implements MustVerifyEmailContract
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, HasRoles, MustVerifyEmail;
     
 
     /**
@@ -24,6 +25,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'diploma'
     ];
 
     /**
@@ -48,10 +50,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    
-        public function subscription()
+
+    public function subscription()
     {
         return $this->hasOne(Subscription::class);
+    }
+
+    public function meetings()
+    {
+        return $this->belongsToMany(Meeting::class)->withTimestamps();
+    }
+
+    public function createdMeetings()
+    {
+        return $this->hasMany(Meeting::class, 'created_by');
     }
 
 

@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <h2 class="text-2xl font-bold text-green-600 mb-6 text-center">Connexion</h2>
+    <h2 class="text-2xl font-bold text-green-600 mb-6 text-center">{{__('Connexion')}}</h2>
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -16,7 +16,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Mot De Passe')" class="text-gray-700 font-medium" />
+            <x-input-label for="password" :value="__('Mot de Passe')" class="text-gray-700 font-medium" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                             type="password"

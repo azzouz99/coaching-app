@@ -4,9 +4,9 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h2 class="font-bold text-2xl">
-                        {{ $course->title }}
+                        {{ __($course->title) }}
                     </h2>
-                    <p class="text-green-100 mt-2">{{ __('Cours de') }} {{ $course->coach->name }}</p>
+                    <p class="text-green-100 mt-2">{{ __('Cours de') }} {{ __($course->coach->name) }}</p>
                 </div>
                 <a href="{{ route('coach.show', $course->coach) }}" class="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition-colors">
                     {{ __('← Retour au profil de l\'intervenant') }}
@@ -28,7 +28,7 @@
                             <div class="space-y-4">
                                 <div>
                                     <h4 class="text-sm font-medium text-gray-500">{{ __('Intervenant') }}</h4>
-                                    <p class="text-gray-900 font-medium">{{ $course->coach->name }}</p>
+                                    <p class="text-gray-900 font-medium">{{ __($course->coach->name) }}</p>
                                 </div>
                                 
                                 <div>
@@ -153,7 +153,7 @@
                                     <!-- Document Info -->
                                     <div class="bg-gray-50 p-4">
                                         <div>
-                                            <h4 class="font-semibold text-gray-900">{{ $course->title }}</h4>
+                                            <h4 class="font-semibold text-gray-900">{{ __($course->title) }}</h4>
                                             <p class="text-sm text-gray-600">{{ $fileType }}</p>
                                         </div>
                                     </div>
@@ -181,7 +181,7 @@
                                 <div class="mt-4 p-4 bg-gray-50 rounded-lg">
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <h4 class="font-semibold text-gray-900">{{ $course->title }}</h4>
+                                            <h4 class="font-semibold text-gray-900">{{ __($course->title) }}</h4>
                                             <p class="text-sm text-gray-600">{{ __('Vidéo de formation') }}</p>
                                         </div>
                                     </div>
@@ -202,7 +202,7 @@
                             <div class="bg-white border border-gray-200 hover:border-green-300 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
                                 <!-- Course Header -->
                                 <div class="bg-gradient-to-r from-green-600 to-green-700 p-4 text-white">
-                                    <h5 class="font-bold truncate">{{ $relatedCourse->title }}</h5>
+                                    <h5 class="font-bold truncate">{{ __($relatedCourse->title) }}</h5>
                                 </div>
                                 
                                 <!-- Course Body -->
@@ -255,7 +255,7 @@
                                                 <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                                                 </svg>
-                                                Vidéo
+                                               {{ __(' Vidéo') }}
                                             </span>
                                         @endif
                                     </div>
@@ -266,7 +266,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                         </svg>
-                                        Voir le cours
+                                        {{ __('Voir le cours') }}
                                     </a>
                                 </div>
                             </div>

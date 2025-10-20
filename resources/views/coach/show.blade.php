@@ -4,7 +4,7 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h2 class="font-bold text-2xl">
-                        {{ $coach->name }}
+                        {{ __($coach->name) }}
                     </h2>
                     <p class="text-green-100 mt-2">{{ __('Intervenant Expert') }}</p>
                 </div>
@@ -36,11 +36,11 @@
                                     </div>
                                 @endif
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ $coach->name }}</h3>
-                            <div class="flex items-center justify-center mb-4">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">{{ __($coach->name) }}</h3>
+                            {{-- <div class="flex items-center justify-center mb-4">
                                 <div class="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
                                 <span class="text-sm text-gray-600">{{ __('Intervenant Actif') }}</span>
-                            </div>
+                            </div> --}}
                             <div class="flex justify-center space-x-4">
                                 <div class="text-center">
                                     <div class="text-2xl font-bold text-green-600">{{ $coach->courses->count() }}</div>
@@ -58,7 +58,7 @@
                     <div class="lg:col-span-2">
                         <h4 class="text-xl font-bold text-gray-900 mb-4">{{ __('À propos de cet intervenant') }}</h4>
                         @if($coach->description)
-                            <p class="text-gray-600 leading-relaxed mb-6">@nl2br($coach->description)</p>
+                            <p class="text-gray-600 leading-relaxed mb-6">@nl2br(__($coach->description))</p>
                         @else
                             <p class="text-gray-500 italic mb-6">{{ __('Aucune description disponible pour ce coach.') }}</p>
                         @endif
@@ -103,7 +103,7 @@
                             <div class="bg-white border border-gray-200 hover:border-green-300 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
                                 <!-- Course Header -->
                                 <div class="bg-gradient-to-r from-green-600 to-green-700 p-4 text-white">
-                                    <h5 class="font-bold truncate">{{ $course->title }}</h5>
+                                    <h5 class="font-bold truncate">{{ __($course->title) }}</h5>
                                 </div>
                                 
                                 <!-- Course Body -->
@@ -167,7 +167,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                                         </svg>
-                                        Voir le cours
+                                        {{ __('Voir le cours') }}
                                     </a>
                                 </div>
                             </div>

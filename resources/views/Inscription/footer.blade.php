@@ -2,8 +2,8 @@
     <div class="container mx-auto px-4 md:px-6 py-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="md:col-span-1">
-                <h3 class="text-lg font-bold text-green-600 mb-4">CongrèsCoaching</h3>
-                <p class="text-sm text-gray-600 mb-4">Le rendez-vous annuel des professionnels et étudiants du coaching en Tunisie.</p>
+                <h3 class="text-lg font-bold text-green-600 mb-4">CERMI</h3>
+                <p class="text-sm text-gray-600 mb-4">Plateforme de formation et de partage de connaissances dans le domaine de la médecine islamique.</p>
                 <div class="flex space-x-4">
                     <a href="#" class="text-gray-400 hover:text-green-600">
                         <span class="sr-only">Facebook</span>
@@ -83,7 +83,7 @@
         </div>
         
         <div class="border-t border-gray-200 pt-8 mt-8 text-center">
-            <p class="text-sm text-gray-600">© {{ date('Y') }} CongrèsCoaching. Tous droits réservés.</p>
+            <p class="text-sm text-gray-600">© {{ date('Y') }} CERMI. Tous droits réservés.</p>
         </div>
     </div>
 </footer>

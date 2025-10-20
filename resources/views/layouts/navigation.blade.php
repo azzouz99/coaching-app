@@ -1,4 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -9,16 +10,37 @@
                         <img src="{{ asset('images/logo2.png')}}" alt="Logo" class="h-12 w-auto">
                     </a>
                 </div>
-
+                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                         {{ __('Accueil') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                    @if (Auth::user()->hasRole('congress'))
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('Les Cours du Congrés') }}
+                        </x-nav-link>
+                    @endif
+                    @if (Auth::user()->hasRole('zaytouna'))
+                        <x-nav-link :href="route('zaytouna.index')" :active="request()->routeIs('zaytouna.*')">
+                            {{ __('Enseignement Zaytouna') }}
+                        </x-nav-link>
+                    @endif
+                    @if (Auth::user()->hasRole('student'))     
+                        <x-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
+                            {{ __('Espace étudiant 3ème nutrition') }}
+                        </x-nav-link>
+                     @endif
+                    @can('users.manage')
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                        {{ __('Utilisateurs') }}
                     </x-nav-link>
+                    @endcan
+                    <div class="flex items-center">
+                        <x-language-switcher />
+                    </div>
                 </div>
+                
             </div>
 
             <!-- Settings Dropdown -->
@@ -37,10 +59,13 @@
                     </x-slot>
 
                     <x-slot name="content">
+
                         <x-dropdown-link :href="route('profile.edit')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
-
+                        {{-- <x-dropdown-link :href="route('subscription.trial.success')">
+                            {{ __('Abonnement') }}
+                        </x-dropdown-link> --}}
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -48,7 +73,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Se déconnecter') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -73,13 +98,34 @@
             <x-responsive-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                 {{ __('Accueil') }}
             </x-responsive-nav-link>
+            @if (Auth::user()->hasRole('congress'))
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Les Cours du Congrés') }}
             </x-responsive-nav-link>
+            @endif
+            @if (Auth::user()->hasRole('zaytouna'))
+            <x-responsive-nav-link :href="route('zaytouna.index')" :active="request()->routeIs('zaytouna.*')">
+                {{ __('Enseignement Zaytouna') }}
+            </x-responsive-nav-link>
+            @endif
+            @if (Auth::user()->hasRole('student'))
+            <x-responsive-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
+                {{ __('Espace étudiant 3ème nutrition') }}
+            </x-responsive-nav-link>
+            @endif
+            @can('users.manage')
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                {{ __('Utilisateurs') }}
+            </x-responsive-nav-link>
+            @endcan
+            <div class="px-3 py-2">
+                <x-language-switcher />
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
+            @auth
             <div class="px-4">
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
@@ -93,14 +139,23 @@
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Se déconnecter') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
+            @else
+            <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('login')">
+                    {{ __('Se Connecter') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('register')">
+                    {{ __('Inscription') }}
+                </x-responsive-nav-link>
+            </div>
+            @endauth
         </div>
     </div>
 </nav>

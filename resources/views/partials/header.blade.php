@@ -1,4 +1,4 @@
-<header class="w-full bg-white shadow-sm py-4" x-data="{ open: false }">
+<header class="w-full bg-white shadow-sm py-4" x-data="{ open: false, langOpen:false }">
     <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div class="flex items-center">
             <a href="{{ url('/') }}">
@@ -7,28 +7,39 @@
             <div class="flex flex-col leading-tight ml-2">
                 <span class="text-2xl font-bold text-black">CERMI</span>
                 <span class="text-sm text-gray-700 leading-snug">
-                    Centre d'Études et
-                    de Recherches en
-                     Médecine Islamique
+                    {{ __('Centre d\'Études et de Recherches en Médecine Islamique') }}
                 </span>
             </div>
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-6">
+        <nav class="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
             @auth
-            <a href="{{ route('dashboard') }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Tableau de bord</a>
-            <form method="POST" action="{{ route('logout') }}" class="inline">
-                @csrf
-                <button type="submit" class="text-sm font-medium text-green-600 hover:text-green-800 transition-colors">
-                    Se déconnecter
-                </button>
-            </form>
+                <a href="{{ route('zaytouna.index') }}"
+                class="px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-black hover:bg-green-600 hover:text-white transition">
+                    {{ __('Tableau de bord') }}
+                </a>
+
+                <form method="POST" action="{{ route('logout') }}" class="inline">
+                    @csrf
+                    <button type="submit"
+                            class="px-4 py-2 rounded-md text-sm font-medium bg-green-100 text-green-700 hover:bg-green-700 hover:text-white transition">
+                        {{ __('Se déconnecter') }}
+                    </button>
+                </form>
             @endauth
+
             @if (!auth()->check())
-            <a href="{{ route('login')  }}" class="text-sm font-medium text-black hover:text-green-600 transition-colors">Se Connecter</a>
-            <a href="{{ route('register') }}" class="text-sm font-medium bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">Inscription</a>
+                <a href="{{ route('login') }}"
+                class="px-4 py-2 rounded-md text-sm font-medium bg-gray-100 text-black hover:bg-green-600 hover:text-white transition">
+                    {{ __('Se Connecter') }}
+                </a>
+                <a href="{{ route('register') }}"
+                class="px-4 py-2 rounded-md text-sm font-medium bg-green-600 text-white hover:bg-green-700 transition">
+                    {{ __('Inscription') }}
+                </a>
             @endif
+        <x-language-switcher />
         </nav>
 
         <!-- Hamburger Button -->
@@ -43,18 +54,20 @@
     <div class="md:hidden" x-show="open" x-transition>
         <div class="px-4 pt-2 pb-3 space-y-1">
             @auth
-            <a href="{{ route('dashboard') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Tableau de bord</a>
+            <a href="{{ route('zaytouna.index') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">{{ __('Tableau de bord') }}</a>
             <form method="POST" action="{{ route('logout') }}" class="inline">
                 @csrf
-                <button type="submit" class="block w-full text-left px-3 py-2 text-base font-medium text-green-600 hover:text-green-800">
-                    Se déconnecter
+                <button type="submit" class="w-full px-3 py-2 text-base font-medium text-green-600 hover:text-green-800 rtl:text-right text-start">
+                     {{ __('Se déconnecter') }}
                 </button>
             </form>
             @else
-            {{-- <a href="{{ route('register') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">À propos</a> --}}
-            <a href="{{ route('login') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">Se Connecter</a>
-            <a href="{{ route('register') }}" class="block px-3 py-2 text-base font-medium text-green-600">Inscription</a>
+            <a href="{{ route('login') }}" class="block px-3 py-2 text-base font-medium text-black hover:text-green-600">{{ __('Se Connecter') }}</a>
+            <a href="{{ route('register') }}" class="block px-3 py-2 text-base font-medium text-green-600">{{ __('Inscription') }}</a>
             @endauth
+
+            <!-- 🌍 Language Switcher (mobile) -->
+        <x-language-switcher />
         </div>
     </div>
 </header>

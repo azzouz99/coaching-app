@@ -13,7 +13,12 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
-
+'bunny_stream' => [
+    'library_id' => env('BUNNY_STREAM_LIBRARY_ID'),
+    'key'        => env('BUNNY_STREAM_API_KEY'),
+    'embed_host' => env('BUNNY_STREAM_EMBED_HOST', 'iframe.mediadelivery.net'),
+    'embed_token_key' => env('BUNNY_STREAM_TOKEN_KEY'),
+],
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
