@@ -40,15 +40,15 @@
         <section class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4">
                 <div class="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-gray-300 border border-gray-200">
-                    <video 
-                        class="w-full h-auto"
-                        loop
-                        controls
-                        poster="{{ asset('storage/thumbnails/cover.png') }}"
-                    >
-                        <source src="{{ asset('storage/videos/intro.mp4') }}"  type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <div style="position:relative;padding-top:56.25%;">
+                        <iframe 
+                            src="{{ App\Support\BunnyEmbed::signedIframeSrc('d332b0c6-5801-432c-8d0f-7c36cade41c8') }}" 
+                            loading="lazy" 
+                            style="border:0;position:absolute;top:0;height:100%;width:100%;" 
+                            allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" 
+                            allowfullscreen="true">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>
@@ -139,7 +139,7 @@
                     <section class="py-12 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4">
 <div style="position:relative;padding-top:56.25%;">
-    <iframe src="{{ App\Support\BunnyEmbed::signedIframeSrc('e74a18c3-c82a-4a0f-b150-f8186d1137b0') }}" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe></div>
+    <iframe src="{{ App\Support\BunnyEmbed::signedIframeSrc('e74a18c3-c82a-4a0f-b150-f8186d1137b0') }}" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe></div>
         </section>
             <div class="flex flex-col lg:flex-row gap-12">
                 <!-- Left Column: Programme overview -->
