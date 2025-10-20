@@ -45,7 +45,7 @@
                             title="{{ __($course->title) }}"
                             loading="lazy"
                             allowfullscreen
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             class="w-full h-full border-0"
                         ></iframe>
                     @else
