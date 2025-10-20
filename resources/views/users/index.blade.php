@@ -75,7 +75,7 @@
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">
                     {{ $user->hasVerifiedEmail() ? __('Vérifié') : __('Non vérifié') }}
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->diplome ?? '—' }}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->diploma ?? '—' }}</td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">
                     @php $roles = method_exists($user, 'getRoleNames') ? $user->getRoleNames()->toArray() : []; @endphp
                     @if(!empty($roles))
