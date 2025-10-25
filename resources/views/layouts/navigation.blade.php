@@ -16,6 +16,7 @@
                     <x-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                         {{ __('Accueil') }}
                     </x-nav-link>
+
                     @if (Auth::user()->hasRole('congress'))
                         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                             {{ __('Les Cours du Congrés') }}
@@ -25,6 +26,9 @@
                         <x-nav-link :href="route('zaytouna.index')" :active="request()->routeIs('zaytouna.*')">
                             {{ __('Enseignement Zaytouna') }}
                         </x-nav-link>
+                    <x-nav-link :href="route('meetings.index')" :active="request()->routeIs('meetings.*')">
+                        {{ __('Réunions') }}
+                    </x-nav-link>
                     @endif
                     @if (Auth::user()->hasRole('student'))     
                         <x-nav-link :href="route('coming-soon')" :active="request()->routeIs('etudiant')">
@@ -98,6 +102,7 @@
             <x-responsive-nav-link :href="route('welcome')" :active="request()->routeIs('welcome')">
                 {{ __('Accueil') }}
             </x-responsive-nav-link>
+
             @if (Auth::user()->hasRole('congress'))
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Les Cours du Congrés') }}
@@ -106,6 +111,9 @@
             @if (Auth::user()->hasRole('zaytouna'))
             <x-responsive-nav-link :href="route('zaytouna.index')" :active="request()->routeIs('zaytouna.*')">
                 {{ __('Enseignement Zaytouna') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('meetings.index')" :active="request()->routeIs('meetings.*')">
+                {{ __('Réunions') }}
             </x-responsive-nav-link>
             @endif
             @if (Auth::user()->hasRole('student'))

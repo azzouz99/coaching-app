@@ -12,6 +12,7 @@ class MeetingController extends Controller
     public function index()
     {
         $meetings = Meeting::withCount('participants')
+            ->where('meet_at', '>', now())
             ->orderByDesc('meet_at')
             ->paginate(12);
 

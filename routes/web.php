@@ -21,13 +21,14 @@ Route::view('/inscription',          'Inscription.index')->name('inscription');
 Route::view('/inscription/coach',    'Inscription.components.coach-inscription')->name('inscription.coach');
 Route::view('/inscription/etudiant', 'Inscription.components.student-inscription')->name('inscription.etudiant');
 Route::view('/inscription/about',    'Inscription.components.about-us')->name('inscription.about');
+Route::get('meetings', [MeetingController::class, 'index'])->name('meetings.index');
 Route::middleware(['auth','permission:users.manage|roles.manage', 'verified'])->group(function () {
     Route::get('users/{user}/edit', [UsersController::class, 'edit'])->name('users.edit');
     Route::patch('users/{user}/roles', [UsersController::class, 'updateRoles'])->name('users.update-roles');
     Route::patch('users/{user}/permissions', [UsersController::class, 'updatePermissions'])->name('users.update-permissions');
     Route::get('users', [UsersController::class, 'index'])->name('users.index');
     Route::delete('users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
-    Route::get('meetings', [MeetingController::class, 'index'])->name('meetings.index');
+    
     Route::get('meetings/create', [MeetingController::class, 'create'])->name('meetings.create');
     Route::post('meetings', [MeetingController::class, 'store'])->name('meetings.store');
 });

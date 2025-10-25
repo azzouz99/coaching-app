@@ -254,20 +254,11 @@
   "Nous demandons à Allah de vous accorder réussite et bénédiction.": "نسألُ الله أن يوفّقكم ويبارك لكم.",
   "Rejoignez-nous dès maintenant et découvrez la richesse de la médecine islamique." : "انضم إلينا الآن واكتشف ثراء الطب الإسلامي.",
   "Prêt à commencer votre voyage ?" : "هل أنت مستعد لبدء رحلتك؟"  ,
-  "Inscrivez-vous maintenant" : "سجّل الآن"
-
-
-
-
-
-
-
-
-
-
-
-
-,
+  "Inscrivez-vous maintenant" : "سجّل الآن",
+  "Réunions": "اللقاءات",
+  "Organisé par votre accompagnateur": "منظم من قبل مرشدك",
+  "Un résumé clair du sujet, de la date et du lien Google Meet.": "ملخص واضح للموضوع، التاريخ، ورابط Google Meet.",
+  "Vos réunions à venir": "لقاءاتك القادمة",
     "Réunions Virtuelles": "اللقاءات الافتراضية",
     "Suivi des réunions planifiées et liens Google Meet": "متابعة اللقاءات المجدولة وروابط Google Meet",
     "Créer une nouvelle réunion": "إنشاء لقاء جديد",
@@ -281,5 +272,6 @@
     "Lien de réunion": "رابط اللقاء",
     "Envoyé": "تم الإرسال",
     "En attente": "في الانتظار",
+    "Rejoindre la réunion": "الانضمام إلى اللقاء",
     "{0}Aucun destinataire|{1}Un destinataire|[2,*]:count destinataires": "{0}لا يوجد مستلمون|{1}مستلم واحد|[2,*]:count مستلمين"
 }
