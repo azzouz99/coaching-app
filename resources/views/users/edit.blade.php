@@ -32,7 +32,7 @@
           </div>
           <div>
             <p class="text-gray-500">{{ __('Diplôme') }}</p>
-            <p class="font-medium text-gray-900">{{ $user->diplome ?? '—' }}</p>
+            <p class="font-medium text-gray-900">{{ $user->diploma ?? '—' }}</p>
           </div>
         </div>
       </div>

@@ -101,6 +101,9 @@
             <thead class="bg-green-50">
               <tr>
                 <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
+                  {{ __('ID') }}
+                </th>
+                <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                   {{ __('Nom') }}
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
@@ -108,9 +111,6 @@
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                   {{ __('Email vérifié') }}
-                </th>
-                <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                  {{ __('Diplôme') }}
                 </th>
                 <th class="px-6 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                   {{ __('Créé le') }}
@@ -126,12 +126,12 @@
             <tbody class="bg-white divide-y divide-gray-100">
               @forelse($users as $user)
                 <tr class="hover:bg-green-50/60">
+                  <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{{ $user->id }}</td>
                   <td class="px-6 py-4 whitespace-nowrap font-medium text-gray-900">{{ $user->name }}</td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->email }}</td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">
                     {{ $user->hasVerifiedEmail() ? __('Vérifié') : __('Non vérifié') }}
                   </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-gray-700">{{ $user->diploma ?? '—' }}</td>
                   <td class="px-6 py-4 whitespace-nowrap text-gray-700">
                     {{ $user->created_at->format('d/m/Y') }}  
                   </td>
