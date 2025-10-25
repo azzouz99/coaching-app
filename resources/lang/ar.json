@@ -267,4 +267,19 @@
 
 
 
+,
+    "Réunions Virtuelles": "اللقاءات الافتراضية",
+    "Suivi des réunions planifiées et liens Google Meet": "متابعة اللقاءات المجدولة وروابط Google Meet",
+    "Créer une nouvelle réunion": "إنشاء لقاء جديد",
+    "Aucune réunion planifiée.": "لا توجد لقاءات مجدولة حالياً.",
+    "Commencez par créer votre première réunion en cliquant sur le bouton créer une nouvelle réunion.": "ابدأ بإنشاء أول لقاء لك عبر الضغط على زر إنشاء لقاء جديد.",
+    "Sujet": "الموضوع",
+    "Date de réunion": "موعد اللقاء",
+    "Heure d'envoi email": "وقت إرسال البريد",
+    "Destinataires": "المستلمون",
+    "Statut": "الحالة",
+    "Lien de réunion": "رابط اللقاء",
+    "Envoyé": "تم الإرسال",
+    "En attente": "في الانتظار",
+    "{0}Aucun destinataire|{1}Un destinataire|[2,*]:count destinataires": "{0}لا يوجد مستلمون|{1}مستلم واحد|[2,*]:count مستلمين"
 }

@@ -12,11 +12,7 @@ class UsersController extends Controller
     
 public function index()
 {
-    $q = request('q');
-    $users = \App\Models\User::when($q, fn($x) =>
-        $x->where(fn($w) => $w->where('name','like',"%$q%")->orWhere('email','like',"%$q%"))
-    )->orderBy('name')->paginate(15);
-
+    $users = User::with('roles')->get(); 
     return view('users.index', compact('users'));
 }
 
