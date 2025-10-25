@@ -18,7 +18,7 @@
   </x-slot>
 
   @php
-    $isAdmin = !auth()->user()?->hasRole('admin');
+    $isAdmin = auth()->user()?->hasRole('admin');
   @endphp
 
   <div class="py-8 bg-gray-50">
